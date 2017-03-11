@@ -247,6 +247,172 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/那些年跳过的坑-hexo-github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rexana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qiao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rexana">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/11/那些年跳过的坑-hexo-github/" itemprop="url">
+                  那些年跳过的坑--hexo+github
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T12:53:50+08:00">
+                2017-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>简要：本只是简单记录了搭建的过程已经遇到而在搜不到解决方案的问题。</p>
+<p>##挫折1：找不到下载页面模板的按钮<br>    背景：下载安装好hexo和Git，准备更换一个美美的主题界面，进入[]（<a href="https://hexo.io/themes/）" target="_blank" rel="external">https://hexo.io/themes/）</a>  </p>
+<pre><code>然而结果很明显~not found。好吧。一个方法不行换另外一个。继而又进入jelly下载主题，下载完之后也是一脸懵逼不知道接下去的步骤。后来在大神的指导下，终于完成了操作：
+
+所以，实际上并不是git+主题的网址，
+而是要进去它的github上找到它的地址。点击红色方框
+
+出现可以clone的地址或者直接下载安装包
+
+下载成功之后，打开hexo的安装目录里面的_config.yml文件。值得注意的是，在你所下载的主题文件夹中也包含_config.yml这个名字的文件。此处打开的是根目录文件。
+
+在打开该文件时，小白也遇到了困难。系统提示要选择哪种方式打开该文件。虽然用记事本也可以打开，但是该页面如下所示。所以还是建议下载Markdown或者Notepad++来打开该文件
+
+接下来就是修改theme，将名称改为新的主题名，比如小白的是next；
+</code></pre><p>##挫折二：修改保存文件之后再命令行进行编译时，出现了错误提示</p>
+<pre><code>原来是这样的：在下载主题时，它的文件名如左下所示，解压之后的文件名与压缩包文件名一致。所以应该将文件夹的名字改为“next”，与theme后面的内容保持一致。
+</code></pre><p>##挫折三：头像无法显示<br>   一步一步按照教程保存好图片，设置好头像。刷新界面却怎么也看不到我的头像。难道是没有设置成功？！到底是哪里出错了？</p>
+<pre><code> 检查了一遍又一遍……最后发现……原来我使用的主题是隐藏侧栏模式……虽然不是技术性的问题……但是……好吧，怪我咯，智商低。    
+
+有一点需要注意的是：头像图片应放在这个文件夹里面
+
+###主题设置：###next有三个主题。其界面分别如下所示。
+</code></pre><p>##挫折四：他人访问无法显示界面<br>     主题头像什么的都设置好了。基本完成了初始化。兴致勃勃地打开个人网页：[]（rexana3.github.io）却发现一片空白……<br>     在进行hexo g和hexo s的指令后。在浏览器输入：[]（<a href="http://localhost:4000）却能看到我更新后的界面……" target="_blank" rel="external">http://localhost:4000）却能看到我更新后的界面……</a><br>     经多方查找……发现是自己忘记了进行部署：hexo d</p>
+<p>##挫折五：git配置<br>    然而好像高兴得太早。进行部署时报错了：</p>
+<pre><code>正确格式如下： 
+我已经不想多说什么了。
+</code></pre><p>##挫折六：ssh=key设置依旧报错！##<br>    github界面更新，与旧版不同，导致英语小白并没有成功找到account setting。<br>    以下是当前界面设置ssh -k的操作<br>    步骤：点击右上角的图标，点击setting：</p>
+<pre><code>选择：
+
+然后将：
+
+.pub文件里面的内容复制粘贴到
+
+最后最后……
+
+此刻的心情就如同跑800米到达终点时的感受：终于完成了啊……房子建好了，虽然比较简陋，但是至少可以遮风挡雨。装修什么的以后慢慢来吧~最后遗留的一个问题，每次进行部署的时候……都会弹出一个界面让我输入密码，小伙伴们以一起来谈论一下解决方案吧~
+
+    ***
+百度搜索hexo+Github pages可以找到很多搭建博客的教程，毕竟这也不是新兴之物了。但是作为一个英语是硬伤，软件是小白的我来说完成这个搭建工作真的不是一件很轻松的事情。一边看着师兄的自己写的使用心得（https://www.he110.top/2017/02/03/Hexo%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/），了解什么是hexo，一边查看更为完整的教程。有时候会质疑教程里面的步骤是不是都是必须进行的。事实证明除了购买域名以外，其他的都要乖乖地进行，偷不了懒。
+####1，下载 Node.js
+####2，安装 Linux shell 的虚拟环境——Git
+####3，安装hexo。####（后面两个的下载安装都特别慢……后者使用淘宝源可以提高速度，在上面的网页里也详细介绍了其他提高下载速度的方法）。
+####4，初始化git
+####5，配置github
+####6，设置ssh-keys7，配置_config.yml文件并发布
+    经历了安装卸载再重装，遭遇了大坑小坑以及各种心塞……过程不容易但也充满了乐趣。第一次发现博客还可以这么玩。有人说编程的乐趣在于创造与毁灭。当时并不是十分理解。现在当自己进行创造时，感受到了它的乐趣所在了。不得不提的是，在不能理解教程的情况下，是陈大神手把手教指导陈小白我完成这些工作的~谢谢陈大神。
+    此为*陈大神*博客：[](https://www.he110.top/)
+    对了对了，还有陈小白博客：[](https://rexana3.github.io/)
+    欢迎前来交流~欢迎提出建议~
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/07/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -409,7 +575,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
