@@ -1,0 +1,668 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="第一次接触java的UDP和TCP遇到的小问题以及模拟聊天软件的制作过程。适合有java基础刚接触网络编程的人群。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA网络编程">
+<meta property="og:url" content="http://yoursite.com/2017/03/14/JAVA网络编程/index.html">
+<meta property="og:site_name" content="Rexana">
+<meta property="og:description" content="第一次接触java的UDP和TCP遇到的小问题以及模拟聊天软件的制作过程。适合有java基础刚接触网络编程的人群。">
+<meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/5.png">
+<meta property="og:updated_time" content="2017-04-03T13:23:58.662Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA网络编程">
+<meta name="twitter:description" content="第一次接触java的UDP和TCP遇到的小问题以及模拟聊天软件的制作过程。适合有java基础刚接触网络编程的人群。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/14/JAVA网络编程/"/>
+
+
+
+
+
+  <title> JAVA网络编程 | Rexana </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rexana</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/JAVA网络编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rexana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qiao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rexana">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JAVA网络编程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T20:27:30+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  第一次接触java的UDP和TCP遇到的小问题以及模拟聊天软件的制作过程。适合有java基础刚接触网络编程的人群。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>  UDP有点类似于寄快递。把要传送出去的东西打包成一个包裹，写上地址，就寄出去了。<br>但是在运送过程中也和寄快递一样存在安全隐患，也许是地址写错了，也许是发生了其他意外，导致接收方接收不到信息。小白在学习过程中就遇到了这样的问题。</p>
+<h4 id="接收端接收不到发送端发送的东西"><a href="#接收端接收不到发送端发送的东西" class="headerlink" title="接收端接收不到发送端发送的东西"></a>接收端接收不到发送端发送的东西</h4><p>纠结很久，才发现又是因为一个低级的错误。<br>我打开cmd先进行发送端的发送，后结束发送程序。再打开接收端接收。<br>！<a href="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png" target="_blank" rel="external">1</a><br>解决方法：打开两个cmd，一边进行发送，一边进行接收<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/2.png" alt="2"></p>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>  TCP较于UDP更为安全可靠，它通过三次握手来确定对方的存在：<br>  客户端：在？<br>  服务端：我在<br>  客户端：好的。我发条消息给你。<br> 这样就保证了对方能准确地接收到消息。<br> 在学习过程中，我把TCP的传送过程和旅游活动进行了类比，方便记忆。</p>
+<h4 id="客户端——游人"><a href="#客户端——游人" class="headerlink" title="客户端——游人"></a>客户端——游人</h4><h6 id="客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口"><a href="#客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口" class="headerlink" title="客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口"></a>客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口</h6><h6 id="创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息"><a href="#创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息" class="headerlink" title="创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息"></a>创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息</h6><h6 id="关流——行程结束，不必再与景区保持联系"><a href="#关流——行程结束，不必再与景区保持联系" class="headerlink" title="关流——行程结束，不必再与景区保持联系"></a>关流——行程结束，不必再与景区保持联系</h6><h4 id="服务端——景区"><a href="#服务端——景区" class="headerlink" title="服务端——景区"></a>服务端——景区</h4><h6 id="确定端口——景区要有一个固定的入口"><a href="#确定端口——景区要有一个固定的入口" class="headerlink" title="确定端口——景区要有一个固定的入口"></a>确定端口——景区要有一个固定的入口</h6><h6 id="获取客户端ip——景区获取游人的联系方式"><a href="#获取客户端ip——景区获取游人的联系方式" class="headerlink" title="获取客户端ip——景区获取游人的联系方式"></a>获取客户端ip——景区获取游人的联系方式</h6><h6 id="创建输出流和输入流——与游人进行通信"><a href="#创建输出流和输入流——与游人进行通信" class="headerlink" title="创建输出流和输入流——与游人进行通信"></a>创建输出流和输入流——与游人进行通信</h6><h6 id="关流——游人结束行程，不再联系"><a href="#关流——游人结束行程，不再联系" class="headerlink" title="关流——游人结束行程，不再联系"></a>关流——游人结束行程，不再联系</h6><h2 id="尝试制作一个聊天程序"><a href="#尝试制作一个聊天程序" class="headerlink" title="尝试制作一个聊天程序"></a>尝试制作一个聊天程序</h2><h3 id="分析需要用到的知识点："><a href="#分析需要用到的知识点：" class="headerlink" title="分析需要用到的知识点："></a>分析需要用到的知识点：</h3><p>1，界面设计<br>2，多线程<br>3，网络编程<br>4，IO流<br>5，集合</p>
+<h3 id="基于现有知识所需要解决的问题"><a href="#基于现有知识所需要解决的问题" class="headerlink" title="基于现有知识所需要解决的问题"></a>基于现有知识所需要解决的问题</h3><h4 id="1，如何获取对方的ip地址"><a href="#1，如何获取对方的ip地址" class="headerlink" title="1，如何获取对方的ip地址"></a>1，如何获取对方的ip地址</h4><p>一开始，我陷入了思维的误区，也是因为知识面不够广，认为每个用户在使用该程序时都以自己为服务端，他人为客户端。<br>那么通信过程就是服务端和客户端的通信。那么，在未建立起联系的时候，客户端如何进行获取服务端ip地址进而对其绑定呢？<br>久思不得其解。最后在陈大神的点拨下才恍然大悟，只要固定一个服务端，用户只使用客户端即可啊！</p>
+<h4 id="2，该程序在使用时是否需要同时打开客户端和服务端"><a href="#2，该程序在使用时是否需要同时打开客户端和服务端" class="headerlink" title="2，该程序在使用时是否需要同时打开客户端和服务端"></a>2，该程序在使用时是否需要同时打开客户端和服务端</h4><p>不需要。用户只需要打开客户端。并且要先启动服务端之后再打开客户端。</p>
+<h4 id="3，如何识别发送者的身份"><a href="#3，如何识别发送者的身份" class="headerlink" title="3，如何识别发送者的身份"></a>3，如何识别发送者的身份</h4><p> 在聊天过程中，要如何分辨发送消息的人是谁呢？ip地址时常改变，无法进行用户名的绑定。让用户每次使用都输入自己的名字又过于繁琐。陈大神说，还有另外一种地址叫做Mac。通常情况下不会发生改变而且具有唯一性。<br> 不过，我的解决方法是：用户输入用户名之后我获取用户名，每当该用户发送消息都在前面加上该用户名。<br> 当然，这里可以考虑用Map集合的来保存ip和用户名，保证两者的关系的绑定</p>
+<h4 id="4，"><a href="#4，" class="headerlink" title="4，"></a>4，</h4><p> 服务端进行遍历socketList集合获取客户端的ip地址。<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png" alt="3">;<br> 如图所示，不管是谁发送的消息，显示的都是我本机的ip地址。<br> 原代码：<br> 在类里面宏定义：<br>    Socket s= null;<br>进行遍历时：<br>                for(Socket socket : newServer.socketList){<br>                    PrintStream ps = new PrintStream(socket.getOutputStream());<br>                    String ip = socket.getInetAddress().toString();<br>                    ps.println(ip+”说：”+content);<br>有兴趣查看完整代码可来我的github逛逛喔~<br> 后来居然是学php的陈大神帮我debug……<br> 在for循环里面，重新定义的socket覆盖了前面的s，导致每次获取的都是本机地址。<br>修改后的代码：<br>                 for(Socket socket : newServer.socketList){<br>                    PrintStream ps = new PrintStream(socket.getOutputStream());<br>                    String ip = s.getInetAddress().toString();<br>                    ps.println(ip+”说：”+content);<br>                }</p>
+<h4 id="5-进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？"><a href="#5-进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？" class="headerlink" title="5,进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？"></a>5,进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？</h4><p>举个例子，这里有一个txt文件，里面写着”今天天气真好”,发送一个TXT文件，那么其他用户就要接收文件，<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.png" alt="4"><br>而不是在聊天框显示出“今天天气真好”;<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/5.png" alt="5"><br>所以如何让程序进行识别判断呢？<br>在客户端这边设置在发送文件的时候，默认发送一个标识符，比如说：发出一个字符’a’；<br>在服务端设置如果收到的消息是’a’，就认为这是一个文件，于是告诉所有的用户：准备接收文件啦，快使用你们的SaveFile方法来保存这个文件。</p>
+<h4 id="6，bufferedreader的readline方法发生阻塞"><a href="#6，bufferedreader的readline方法发生阻塞" class="headerlink" title="6，bufferedreader的readline方法发生阻塞"></a>6，bufferedreader的readline方法发生阻塞</h4><p>接触过IO流的小伙伴们一定都很熟悉读取文件的方式<br>        BufferedReader bufr = new BufferedReader(FileReader fr = new FileReader(“buf.txt”););<br>        String line = null;<br>        while((line = bufr.readLine())!= null){<br>            System.out.println(line);<br>        }<br>在客户端，我也使用了这种方法进行读取，并规定，当line = null的时候，就说明文件读取完毕，可<br>以退出while循环。<br>可是在使用的过程中就出现了一个问题:<br>        while{<br>            //此处省略代码<br>            System.out.println(“未退出循环””);<br>            if（line ==null）break;<br>        }<br>这个判断程序一直判断为假。明明已经读取到了文件末尾，为什么不等于空呢？而且，按常理来讲，如果判<br>断为假，那么应该一直进行while死循，一直输出“未退出循环”。然而并没有，它输出完文件的内容之后就不再进行其他操作了。<br>查阅了很多资料，才知道，原来readline方法读取到文件末尾并不会返回null。<br>这是一个阻塞的方法，读到末尾它会一直等待输入。当流被关闭时，才会返回null<br>可是这里怎么可能去关闭流呢？关了就收不到信息了呀。<br>大神突然来了一句：“你给它加个判断呀！就像判断它是不是文件一样，你也可以判断它是不是读到了文件末尾，是的话就直接退出循环嘛。”<br>！！！折腾了我两天的bug居然就这样子解决了……<br>当然啦，如果以字符的形式而不是以行的形式读取就没有问题啦~<br>需要注意的是，这里读取文件的方法应该使用封装后的流，<br>        BufferedWriter bufw = new BufferedWriter (new FileWriter(“buf.txt”););<br>如果使用以下代码，会发现文件保存的时候总是少了最后一行。没有关闭fr流，最后一行存储在缓冲区，没有真正写入到文件里面去<br>        fr = new FileReader(“IO”);<br>        FileWriter fw = new FileWriter(“copy_1.txt”);<br>        int ch =0;<br>        while((ch = fr.read())!=-1){<br>            fw.write(ch);<br>        }<br>时间过得太久……遇到的好多bug都忘了……暂时先这样吧……整个小程序还有很多不足的地方，后续会进行修改完善并将代码更新上传到github。<br>唔，要是哪里写错了，欢迎来吐槽喔~（反正我也没有开启评论功能，你想吐了吐不了~哈哈）</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/11/那些年跳过的坑-hexo-github/" rel="next" title="那些年跳过的坑--hexo+github">
+                <i class="fa fa-chevron-left"></i> 那些年跳过的坑--hexo+github
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/qiao.jpg"
+               alt="Rexana" />
+          <p class="site-author-name" itemprop="name">Rexana</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP"><span class="nav-number">1.</span> <span class="nav-text">UDP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接收端接收不到发送端发送的东西"><span class="nav-number">1.0.1.</span> <span class="nav-text">接收端接收不到发送端发送的东西</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP"><span class="nav-number">2.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#客户端——游人"><span class="nav-number">2.0.1.</span> <span class="nav-text">客户端——游人</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息"><span class="nav-number">2.0.1.0.2.</span> <span class="nav-text">创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关流——行程结束，不必再与景区保持联系"><span class="nav-number">2.0.1.0.3.</span> <span class="nav-text">关流——行程结束，不必再与景区保持联系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务端——景区"><span class="nav-number">2.0.2.</span> <span class="nav-text">服务端——景区</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#确定端口——景区要有一个固定的入口"><span class="nav-number">2.0.2.0.1.</span> <span class="nav-text">确定端口——景区要有一个固定的入口</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取客户端ip——景区获取游人的联系方式"><span class="nav-number">2.0.2.0.2.</span> <span class="nav-text">获取客户端ip——景区获取游人的联系方式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建输出流和输入流——与游人进行通信"><span class="nav-number">2.0.2.0.3.</span> <span class="nav-text">创建输出流和输入流——与游人进行通信</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关流——游人结束行程，不再联系"><span class="nav-number">2.0.2.0.4.</span> <span class="nav-text">关流——游人结束行程，不再联系</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试制作一个聊天程序"><span class="nav-number">3.</span> <span class="nav-text">尝试制作一个聊天程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分析需要用到的知识点："><span class="nav-number">3.1.</span> <span class="nav-text">分析需要用到的知识点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于现有知识所需要解决的问题"><span class="nav-number">3.2.</span> <span class="nav-text">基于现有知识所需要解决的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1，如何获取对方的ip地址"><span class="nav-number">3.2.1.</span> <span class="nav-text">1，如何获取对方的ip地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2，该程序在使用时是否需要同时打开客户端和服务端"><span class="nav-number">3.2.2.</span> <span class="nav-text">2，该程序在使用时是否需要同时打开客户端和服务端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3，如何识别发送者的身份"><span class="nav-number">3.2.3.</span> <span class="nav-text">3，如何识别发送者的身份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4，"><span class="nav-number">3.2.4.</span> <span class="nav-text">4，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？"><span class="nav-number">3.2.5.</span> <span class="nav-text">5,进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6，bufferedreader的readline方法发生阻塞"><span class="nav-number">3.2.6.</span> <span class="nav-text">6，bufferedreader的readline方法发生阻塞</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rexana</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
