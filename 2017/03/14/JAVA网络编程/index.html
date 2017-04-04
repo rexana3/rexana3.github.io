@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/5.png">
-<meta property="og:updated_time" content="2017-04-04T06:40:18.727Z">
+<meta property="og:updated_time" content="2017-04-04T10:35:07.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA网络编程">
 <meta name="twitter:description" content="第一次接触java的UDP和TCP遇到的小问题以及模拟聊天软件的制作过程。适合有java基础刚接触网络编程的人群。">
@@ -371,7 +371,7 @@
 </ol>
 <p>在客户端，我也使用了这种方法进行读取，并规定，当&nbsp;<code>line = null</code>&nbsp;的时候，就说明文件读取完毕，可以退出&nbsp;<code>while</code>&nbsp;循环。<br>可是在使用的过程中就出现了一个问题:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">	<span class="comment">//此处省略代码</span></div><div class="line">	System.out.println(<span class="string">"未退出循环"</span>);</div><div class="line">	<span class="keyword">if</span>（line ==<span class="keyword">null</span>）<span class="keyword">break</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这个判断程序一直判断为假。明明已经读取到了文件末尾，为什么不等于空呢？而且，按常理来讲，如果判<br>断为假，那么应该一直进行&nbsp;<code>while</code>&nbsp;死循环，一直输出&nbsp;”未退出循环”。然而并没有，它输出完文件的内容之后就不再进行其他操作了。<br>查阅了很多资料，才知道，原来&nbsp;<code>readline</code>&nbsp;方法读取到文件末尾并不会返回&nbsp;<code>null</code>。<br>这是一个阻塞的方法，读到末尾它会一直等待输入。当流被关闭时，才会返回&nbsp;<code>null</code><br>可是这里怎么可能去关闭流呢？关了就收不到信息了呀。<br>大神突然来了一句：<code>你给它加个判断呀！就像判断它是不是文件一样，你也可以判断它是不是读到了文件末尾，是的话就直接退出循环嘛。</code><br>！！！折腾了我两天的&nbsp;bug&nbsp;居然就这样子解决了……<br>当然啦，如果以字符的形式而不是以行的形式读取就没有问题啦~另，JAVA&nbsp;1.7&nbsp;也推出了无阻塞的&nbsp;<code>IO流</code>。可以自行查看开发手册啦~<br>需要注意的是，这里读取文件的方法应该使用封装后的流，<code>BufferedWriter bufw = new BufferedWriter (new FileWriter(&quot;buf.txt&quot;));</code>，如果使用以下代码，会发现文件保存的时候总是少了最后一行。没有关闭fr流，最后一行存储在缓冲区，没有真正写入到文件里面去<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">fr = <span class="keyword">new</span> FileReader(<span class="string">"IO"</span>);</div><div class="line">FileWriter fw = <span class="keyword">new</span> FileWriter(<span class="string">"copy_1.txt"</span>);</div><div class="line"><span class="keyword">int</span> ch =<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>((ch = fr.read())!=-<span class="number">1</span>)&#123;</div><div class="line">	fw.write(ch);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>时间过得太久……遇到的好多&nbsp;bug&nbsp;都忘了……暂时先这样吧……整个小程序还有很多不足的地方，后续会进行修改完善并将代码更新上传到&nbsp;github。<br>唔，要是哪里写错了，欢迎来吐槽喔~（反正我也没有开启评论功能，你想吐了吐不了~哈哈）</p>
+<p>时间过得太久……遇到的好多&nbsp;bug&nbsp;都忘了……暂时先这样吧……整个小程序还有很多不足的地方，后续会进行修改完善并将代码更新上传到&nbsp;github。<br><a href="https://github.com/rexana3/test" target="_blank" rel="external">github地址</a><br>客户端代码文件是：newClient4<br>服务端代码文件是：newServer3<br>唔，要是哪里写错了，欢迎来吐槽喔~（反正我也没有开启评论功能，你想吐了吐不了~哈哈）</p>
 
       
     </div>
