@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/5.png">
-<meta property="og:updated_time" content="2017-04-03T14:04:26.796Z">
+<meta property="og:updated_time" content="2017-04-04T05:23:01.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA网络编程">
 <meta name="twitter:description" content="第一次接触java的UDP和TCP遇到的小问题以及模拟聊天软件的制作过程。适合有java基础刚接触网络编程的人群。">
@@ -331,22 +331,43 @@
       
 
       
-        <h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>  UDP有点类似于寄快递。把要传送出去的东西打包成一个包裹，写上地址，就寄出去了。<br>但是在运送过程中也和寄快递一样存在安全隐患，也许是地址写错了，也许是发生了其他意外，导致接收方接收不到信息。小白在学习过程中就遇到了这样的问题。</p>
+        <h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>   UDP有点类似于寄快递。把要传送出去的东西打包成一个包裹，写上地址，就寄出去了。<br>但是在运送过程中也和寄快递一样存在安全隐患，也许是地址写错了，也许是发生了其他意外，导致接收方接收不到信息。小白在学习过程中就遇到了这样的问题。</p>
 <h4 id="接收端接收不到发送端发送的东西"><a href="#接收端接收不到发送端发送的东西" class="headerlink" title="接收端接收不到发送端发送的东西"></a>接收端接收不到发送端发送的东西</h4><p>纠结很久，才发现又是因为一个低级的错误。<br>我打开cmd先进行发送端的发送，后结束发送程序。再打开接收端接收。<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png" alt="1"><br>解决方法：打开两个cmd，一边进行发送，一边进行接收<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/2.png" alt="2"></p>
 <h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>  TCP较于UDP更为安全可靠，它通过三次握手来确定对方的存在：<br>  客户端：在？<br>  服务端：我在<br>  客户端：好的。我发条消息给你。<br> 这样就保证了对方能准确地接收到消息。<br> 在学习过程中，我把TCP的传送过程和旅游活动进行了类比，方便记忆。</p>
-<h4 id="客户端——游人"><a href="#客户端——游人" class="headerlink" title="客户端——游人"></a>客户端——游人</h4><h6 id="客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口"><a href="#客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口" class="headerlink" title="客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口"></a>客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口</h6><h6 id="创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息"><a href="#创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息" class="headerlink" title="创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息"></a>创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息</h6><h6 id="关流——行程结束，不必再与景区保持联系"><a href="#关流——行程结束，不必再与景区保持联系" class="headerlink" title="关流——行程结束，不必再与景区保持联系"></a>关流——行程结束，不必再与景区保持联系</h6><h4 id="服务端——景区"><a href="#服务端——景区" class="headerlink" title="服务端——景区"></a>服务端——景区</h4><h6 id="确定端口——景区要有一个固定的入口"><a href="#确定端口——景区要有一个固定的入口" class="headerlink" title="确定端口——景区要有一个固定的入口"></a>确定端口——景区要有一个固定的入口</h6><h6 id="获取客户端ip——景区获取游人的联系方式"><a href="#获取客户端ip——景区获取游人的联系方式" class="headerlink" title="获取客户端ip——景区获取游人的联系方式"></a>获取客户端ip——景区获取游人的联系方式</h6><h6 id="创建输出流和输入流——与游人进行通信"><a href="#创建输出流和输入流——与游人进行通信" class="headerlink" title="创建输出流和输入流——与游人进行通信"></a>创建输出流和输入流——与游人进行通信</h6><h6 id="关流——游人结束行程，不再联系"><a href="#关流——游人结束行程，不再联系" class="headerlink" title="关流——游人结束行程，不再联系"></a>关流——游人结束行程，不再联系</h6><h2 id="尝试制作一个聊天程序"><a href="#尝试制作一个聊天程序" class="headerlink" title="尝试制作一个聊天程序"></a>尝试制作一个聊天程序</h2><h3 id="分析需要用到的知识点："><a href="#分析需要用到的知识点：" class="headerlink" title="分析需要用到的知识点："></a>分析需要用到的知识点：</h3><p>1，界面设计<br>2，多线程<br>3，网络编程<br>4，IO流<br>5，集合</p>
-<h3 id="基于现有知识所需要解决的问题"><a href="#基于现有知识所需要解决的问题" class="headerlink" title="基于现有知识所需要解决的问题"></a>基于现有知识所需要解决的问题</h3><h4 id="1，如何获取对方的ip地址"><a href="#1，如何获取对方的ip地址" class="headerlink" title="1，如何获取对方的ip地址"></a>1，如何获取对方的ip地址</h4><p>一开始，我陷入了思维的误区，也是因为知识面不够广，认为每个用户在使用该程序时都以自己为服务端，他人为客户端。<br>那么通信过程就是服务端和客户端的通信。那么，在未建立起联系的时候，客户端如何进行获取服务端ip地址进而对其绑定呢？<br>久思不得其解。最后在陈大神的点拨下才恍然大悟，只要固定一个服务端，用户只使用客户端即可啊！</p>
-<h4 id="2，该程序在使用时是否需要同时打开客户端和服务端"><a href="#2，该程序在使用时是否需要同时打开客户端和服务端" class="headerlink" title="2，该程序在使用时是否需要同时打开客户端和服务端"></a>2，该程序在使用时是否需要同时打开客户端和服务端</h4><p>不需要。用户只需要打开客户端。并且要先启动服务端之后再打开客户端。</p>
-<h4 id="3，如何识别发送者的身份"><a href="#3，如何识别发送者的身份" class="headerlink" title="3，如何识别发送者的身份"></a>3，如何识别发送者的身份</h4><p> 在聊天过程中，要如何分辨发送消息的人是谁呢？ip地址时常改变，无法进行用户名的绑定。让用户每次使用都输入自己的名字又过于繁琐。陈大神说，还有另外一种地址叫做Mac。通常情况下不会发生改变而且具有唯一性。<br> 不过，我的解决方法是：用户输入用户名之后我获取用户名，每当该用户发送消息都在前面加上该用户名。<br> 当然，这里可以考虑用Map集合的来保存ip和用户名，保证两者的关系的绑定</p>
-<h4 id="4，"><a href="#4，" class="headerlink" title="4，"></a>4，</h4><p> 服务端进行遍历socketList集合获取客户端的ip地址。<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png" alt="3">;<br> 如图所示，不管是谁发送的消息，显示的都是我本机的ip地址。<br> 原代码：<br> 在类里面宏定义：<br>    Socket s= null;<br>进行遍历时：</p>
-<pre><code>for(Socket socket : newServer.socketList){
-    PrintStream ps = new PrintStream(socket.getOutputStream());
-    String ip = socket.getInetAddress().toString();
-    ps.println(ip+&quot;说：&quot;+content);
-}
-</code></pre><p>有兴趣查看完整代码可来我的github逛逛喔~<br> 后来居然是学php的陈大神帮我debug……<br> 在for循环里面，重新定义的socket覆盖了前面的s，导致每次获取的都是本机地址。<br>修改后的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(Socket socket : newServer.socketList)&#123;</div><div class="line">	PrintStream ps = <span class="keyword">new</span> PrintStream(socket.getOutputStream());</div><div class="line">	String ip = s.getInetAddress().toString();</div><div class="line">	ps.println(ip + <span class="string">"说："</span> + content);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="5-进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？"><a href="#5-进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？" class="headerlink" title="5,进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？"></a>5,进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？</h4><p>举个例子，这里有一个txt文件，里面写着”今天天气真好”,发送一个TXT文件，那么其他用户就要接收文件，<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.png" alt="4"><br>而不是在聊天框显示出“今天天气真好”;<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/5.png" alt="5"><br>所以如何让程序进行识别判断呢？<br>在客户端这边设置在发送文件的时候，默认发送一个标识符，比如说：发出一个字符’a’；<br>在服务端设置如果收到的消息是’a’，就认为这是一个文件，于是告诉所有的用户：准备接收文件啦，快使用你们的SaveFile方法来保存这个文件。</p>
-<h4 id="6，bufferedreader的readline方法发生阻塞"><a href="#6，bufferedreader的readline方法发生阻塞" class="headerlink" title="6，bufferedreader的readline方法发生阻塞"></a>6，bufferedreader的readline方法发生阻塞</h4><p>接触过IO流的小伙伴们一定都很熟悉读取文件的方式</p>
+<h4 id="客户端——游人"><a href="#客户端——游人" class="headerlink" title="客户端——游人"></a>客户端——游人</h4><ul>
+<li>客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口</li>
+<li>创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息</li>
+<li>关流——行程结束，不必再与景区保持联系</li>
+</ul>
+<h4 id="服务端——景区"><a href="#服务端——景区" class="headerlink" title="服务端——景区"></a>服务端——景区</h4><ul>
+<li>确定端口——景区要有一个固定的入口</li>
+<li>获取客户端ip——景区获取游人的联系方式</li>
+<li>创建输出流和输入流——与游人进行通信</li>
+<li>关流——游人结束行程，不再联系</li>
+</ul>
+<h2 id="尝试制作一个聊天程序"><a href="#尝试制作一个聊天程序" class="headerlink" title="尝试制作一个聊天程序"></a>尝试制作一个聊天程序</h2><ul>
+<li>分析需要用到的知识点（会将这些知识重新梳理在下一篇博文~）：</li>
+</ul>
+<ol>
+<li>界面设计</li>
+<li>多线程</li>
+<li>网络编程</li>
+<li>IO流</li>
+<li>集合</li>
+</ol>
+<h3 id="基于现有知识所需要解决的问题"><a href="#基于现有知识所需要解决的问题" class="headerlink" title="基于现有知识所需要解决的问题"></a>基于现有知识所需要解决的问题</h3><ol>
+<li><p>如何获取对方的ip地址<br>一开始，我陷入了思维的误区，也是因为知识面不够广，认为每个用户在使用该程序时都以自己为服务端，他人为客户端。<br>那么通信过程就是服务端和客户端的通信。那么，在未建立起联系的时候，客户端如何进行获取服务端ip地址进而对其绑定呢？<br>久思不得其解。最后在陈大神的点拨下才恍然大悟，只要固定一个服务端，用户只使用客户端即可啊！</p>
+</li>
+<li><p>该程序在使用时是否需要同时打开客户端和服务端<br>不需要。用户只需要打开客户端。并且要先启动服务端之后再打开客户端。</p>
+</li>
+<li>如何识别发送者的身份<br>在聊天过程中，要如何分辨发送消息的人是谁呢？ip地址时常改变，无法进行用户名的绑定。让用户每次使用都输入自己的名字又过于繁琐。陈大神说，还有另外一种地址叫做Mac。通常情况下不会发生改变而且具有唯一性。<br>不过，我的解决方法是：用户输入用户名之后我获取用户名，每当该用户发送消息都在前面加上该用户名。<br>当然，这里可以考虑用Map集合的来保存ip和用户名，保证两者的关系的绑定</li>
+<li>无法正常显示发送者的ip<br>服务端进行遍历socketList集合获取客户端的ip地址。<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png" alt="3">;<br>如图所示，不管是谁发送的消息，显示的都是我本机的ip地址。<br>原代码：<br>在类里面宏定义：<br> Socket s= null;<br>进行遍历时：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(Socket socket : newServer.socketList)&#123;</div><div class="line">	PrintStream ps = <span class="keyword">new</span> PrintStream(socket.getOutputStream());</div><div class="line">	String ip = socket.getInetAddress().toString();</div><div class="line">	ps.println(ip+<span class="string">"说："</span>+content);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>有兴趣查看完整代码可来我的github逛逛喔~<br> 后来居然是学php的陈大神帮我debug……<br> 在for循环里面，重新定义的socket覆盖了前面的s，导致每次获取的都是本机地址。<br>修改后的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(Socket socket : newServer.socketList)&#123;</div><div class="line">	PrintStream ps = <span class="keyword">new</span> PrintStream(socket.getOutputStream());</div><div class="line">	String ip = s.getInetAddress().toString();</div><div class="line">	ps.println(ip + <span class="string">"说："</span> + content);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？<br>举个例子，这里有一个txt文件，里面写着”今天天气真好”,发送一个TXT文件，那么其他用户就要接收文件，<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.png" alt="4"><br>而不是在聊天框显示出“今天天气真好”;<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/5.png" alt="5"><br>所以如何让程序进行识别判断呢？<br>在客户端这边设置在发送文件的时候，默认发送一个标识符，比如说：发出一个字符’a’；<br>在服务端设置如果收到的消息是’a’，就认为这是一个文件，于是告诉所有的用户：准备接收文件啦，快使用你们的SaveFile方法来保存这个文件。</li>
+<li><p>bufferedreader的readline方法发生阻塞<br>接触过IO流的小伙伴们一定都很熟悉读取文件的方式</p>
 <pre><code>BufferedReader bufr = new BufferedReader(FileReader fr = new FileReader(&quot;buf.txt&quot;););
 String line = null;
 while((line = bufr.readLine())!= null){
@@ -358,16 +379,13 @@ while((line = bufr.readLine())!= null){
     System.out.println(&quot;未退出循环&quot;&quot;);
     if（line ==null）break;
 }
-</code></pre><p>这个判断程序一直判断为假。明明已经读取到了文件末尾，为什么不等于空呢？而且，按常理来讲，如果判<br>断为假，那么应该一直进行while死循，一直输出“未退出循环”。然而并没有，它输出完文件的内容之后就不再进行其他操作了。<br>查阅了很多资料，才知道，原来readline方法读取到文件末尾并不会返回null。<br>这是一个阻塞的方法，读到末尾它会一直等待输入。当流被关闭时，才会返回null<br>可是这里怎么可能去关闭流呢？关了就收不到信息了呀。<br>大神突然来了一句：“你给它加个判断呀！就像判断它是不是文件一样，你也可以判断它是不是读到了文件末尾，是的话就直接退出循环嘛。”<br>！！！折腾了我两天的bug居然就这样子解决了……<br>当然啦，如果以字符的形式而不是以行的形式读取就没有问题啦~<br>需要注意的是，这里读取文件的方法应该使用封装后的流，</p>
+</code></pre><p>这个判断程序一直判断为假。明明已经读取到了文件末尾，为什么不等于空呢？而且，按常理来讲，如果判<br>断为假，那么应该一直进行while死循，一直输出“未退出循环”。然而并没有，它输出完文件的内容之后就不再进行其他操作了。<br>查阅了很多资料，才知道，原来readline方法读取到文件末尾并不会返回null。<br>这是一个阻塞的方法，读到末尾它会一直等待输入。当流被关闭时，才会返回null<br>可是这里怎么可能去关闭流呢？关了就收不到信息了呀。<br>大神突然来了一句：“你给它加个判断呀！就像判断它是不是文件一样，你也可以判断它是不是读到了文件末尾，是的话就直接退出循环嘛。”<br>！！！折腾了我两天的bug居然就这样子解决了……<br>当然啦，如果以字符的形式而不是以行的形式读取就没有问题啦~另，java1.7也推出了无阻塞的IO流。可以自行查看开发手册啦~<br>需要注意的是，这里读取文件的方法应该使用封装后的流，</p>
 <pre><code>BufferedWriter bufw = new BufferedWriter (new FileWriter(&quot;buf.txt&quot;););
 </code></pre><p>如果使用以下代码，会发现文件保存的时候总是少了最后一行。没有关闭fr流，最后一行存储在缓冲区，没有真正写入到文件里面去</p>
-<pre><code>fr = new FileReader(&quot;IO&quot;);
-FileWriter fw = new FileWriter(&quot;copy_1.txt&quot;);
-int ch =0;
-while((ch = fr.read())!=-1){
-    fw.write(ch);
-}
-</code></pre><p>时间过得太久……遇到的好多bug都忘了……暂时先这样吧……整个小程序还有很多不足的地方，后续会进行修改完善并将代码更新上传到github。<br>唔，要是哪里写错了，欢迎来吐槽喔~（反正我也没有开启评论功能，你想吐了吐不了~哈哈）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">fr = <span class="keyword">new</span> FileReader(<span class="string">"IO"</span>);</div><div class="line">FileWriter fw = <span class="keyword">new</span> FileWriter(<span class="string">"copy_1.txt"</span>);</div><div class="line"><span class="keyword">int</span> ch =<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>((ch = fr.read())!=-<span class="number">1</span>)&#123;</div><div class="line">	fw.write(ch);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>时间过得太久……遇到的好多bug都忘了……暂时先这样吧……整个小程序还有很多不足的地方，后续会进行修改完善并将代码更新上传到github。<br>唔，要是哪里写错了，欢迎来吐槽喔~（反正我也没有开启评论功能，你想吐了吐不了~哈哈）</p>
 
       
     </div>
@@ -538,7 +556,7 @@ while((ch = fr.read())!=-1){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP"><span class="nav-number">1.</span> <span class="nav-text">UDP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接收端接收不到发送端发送的东西"><span class="nav-number">1.0.1.</span> <span class="nav-text">接收端接收不到发送端发送的东西</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP"><span class="nav-number">2.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#客户端——游人"><span class="nav-number">2.0.1.</span> <span class="nav-text">客户端——游人</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息"><span class="nav-number">2.0.1.0.2.</span> <span class="nav-text">创建Socket输出流和输入流——游人要与景区通信，进行买票或者咨询之类的操作。景区也可以告诉游人一些相关信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关流——行程结束，不必再与景区保持联系"><span class="nav-number">2.0.1.0.3.</span> <span class="nav-text">关流——行程结束，不必再与景区保持联系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务端——景区"><span class="nav-number">2.0.2.</span> <span class="nav-text">服务端——景区</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#确定端口——景区要有一个固定的入口"><span class="nav-number">2.0.2.0.1.</span> <span class="nav-text">确定端口——景区要有一个固定的入口</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取客户端ip——景区获取游人的联系方式"><span class="nav-number">2.0.2.0.2.</span> <span class="nav-text">获取客户端ip——景区获取游人的联系方式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建输出流和输入流——与游人进行通信"><span class="nav-number">2.0.2.0.3.</span> <span class="nav-text">创建输出流和输入流——与游人进行通信</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关流——游人结束行程，不再联系"><span class="nav-number">2.0.2.0.4.</span> <span class="nav-text">关流——游人结束行程，不再联系</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试制作一个聊天程序"><span class="nav-number">3.</span> <span class="nav-text">尝试制作一个聊天程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分析需要用到的知识点："><span class="nav-number">3.1.</span> <span class="nav-text">分析需要用到的知识点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于现有知识所需要解决的问题"><span class="nav-number">3.2.</span> <span class="nav-text">基于现有知识所需要解决的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1，如何获取对方的ip地址"><span class="nav-number">3.2.1.</span> <span class="nav-text">1，如何获取对方的ip地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2，该程序在使用时是否需要同时打开客户端和服务端"><span class="nav-number">3.2.2.</span> <span class="nav-text">2，该程序在使用时是否需要同时打开客户端和服务端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3，如何识别发送者的身份"><span class="nav-number">3.2.3.</span> <span class="nav-text">3，如何识别发送者的身份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4，"><span class="nav-number">3.2.4.</span> <span class="nav-text">4，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？"><span class="nav-number">3.2.5.</span> <span class="nav-text">5,进行文件传输和保存的时候，如何判断这是一个文件以做出不同于聊天消息的处理方式呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6，bufferedreader的readline方法发生阻塞"><span class="nav-number">3.2.6.</span> <span class="nav-text">6，bufferedreader的readline方法发生阻塞</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP"><span class="nav-number">1.</span> <span class="nav-text">UDP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接收端接收不到发送端发送的东西"><span class="nav-number">1.0.1.</span> <span class="nav-text">接收端接收不到发送端发送的东西</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP"><span class="nav-number">2.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#客户端——游人"><span class="nav-number">2.0.1.</span> <span class="nav-text">客户端——游人</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务端——景区"><span class="nav-number">2.0.2.</span> <span class="nav-text">服务端——景区</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试制作一个聊天程序"><span class="nav-number">3.</span> <span class="nav-text">尝试制作一个聊天程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于现有知识所需要解决的问题"><span class="nav-number">3.1.</span> <span class="nav-text">基于现有知识所需要解决的问题</span></a></li></ol></li></ol></div>
             
 
           </div>
