@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/5.png">
-<meta property="og:updated_time" content="2017-04-04T05:24:19.124Z">
+<meta property="og:updated_time" content="2017-04-04T06:13:57.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA网络编程">
 <meta name="twitter:description" content="第一次接触java的UDP和TCP遇到的小问题以及模拟聊天软件的制作过程。适合有java基础刚接触网络编程的人群。">
@@ -331,8 +331,8 @@
       
 
       
-        <h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>   UDP有点类似于寄快递。把要传送出去的东西打包成一个包裹，写上地址，就寄出去了。<br>但是在运送过程中也和寄快递一样存在安全隐患，也许是地址写错了，也许是发生了其他意外，导致接收方接收不到信息。小白在学习过程中就遇到了这样的问题。</p>
-<h4 id="接收端接收不到发送端发送的东西"><a href="#接收端接收不到发送端发送的东西" class="headerlink" title="接收端接收不到发送端发送的东西"></a>接收端接收不到发送端发送的东西</h4><p>纠结很久，才发现又是因为一个低级的错误。<br>我打开cmd先进行发送端的发送，后结束发送程序。再打开接收端接收。<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png" alt="1"><br>解决方法：打开两个cmd，一边进行发送，一边进行接收<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/2.png" alt="2"></p>
+        <h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>UDP有点类似于寄快递。把要传送出去的东西打包成一个包裹，写上地址，就寄出去了。<br>但是在运送过程中也和寄快递一样存在安全隐患，也许是地址写错了，也许是发生了其他意外，导致接收方接收不到信息。小白在学习过程中就遇到了这样的问题。</p>
+<h4 id="接收端接收不到发送端发送的东西"><a href="#接收端接收不到发送端发送的东西" class="headerlink" title="接收端接收不到发送端发送的东西"></a>接收端接收不到发送端发送的东西</h4><p>纠结很久，才发现又是因为一个低级的错误。<br>我打开&nbsp;cmd&nbsp;先进行发送端的发送，后结束发送程序。再打开接收端接收。<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.png" alt="1"><br>解决方法：打开两个cmd，一边进行发送，一边进行接收<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/2.png" alt="2"></p>
 <h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>  TCP较于UDP更为安全可靠，它通过三次握手来确定对方的存在：<br>  客户端：在？<br>  服务端：我在<br>  客户端：好的。我发条消息给你。<br> 这样就保证了对方能准确地接收到消息。<br> 在学习过程中，我把TCP的传送过程和旅游活动进行了类比，方便记忆。</p>
 <h4 id="客户端——游人"><a href="#客户端——游人" class="headerlink" title="客户端——游人"></a>客户端——游人</h4><ul>
 <li>客户端绑定服务端的ip地址和端口——游人出游确定景点以及景区的入口</li>
