@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="学习java三个月，重新梳理复习IO流的知识。适合初学者阅览">
+<meta name="description" content="复习&amp;nps;JAVA&amp;nps;的接口部分的知识。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IO流基础知识梳理">
-<meta property="og:url" content="http://yoursite.com/2017/04/04/IO流基础知识梳理/index.html">
+<meta property="og:title" content="巧用接口">
+<meta property="og:url" content="http://yoursite.com/2017/04/09/巧用接口/index.html">
 <meta property="og:site_name" content="Rexana">
-<meta property="og:description" content="学习java三个月，重新梳理复习IO流的知识。适合初学者阅览">
-<meta property="og:updated_time" content="2017-04-05T07:46:41.971Z">
+<meta property="og:description" content="复习&amp;nps;JAVA&amp;nps;的接口部分的知识。">
+<meta property="og:updated_time" content="2017-04-09T11:20:55.747Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IO流基础知识梳理">
-<meta name="twitter:description" content="学习java三个月，重新梳理复习IO流的知识。适合初学者阅览">
+<meta name="twitter:title" content="巧用接口">
+<meta name="twitter:description" content="复习&amp;nps;JAVA&amp;nps;的接口部分的知识。">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/04/IO流基础知识梳理/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/09/巧用接口/"/>
 
 
 
 
 
-  <title> IO流基础知识梳理 | Rexana </title>
+  <title> 巧用接口 | Rexana </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +249,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/IO流基础知识梳理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/09/巧用接口/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rexana">
@@ -270,7 +270,7 @@
             
             
               
-                IO流基础知识梳理
+                巧用接口
               
             
           </h1>
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T21:08:06+08:00">
-                2017-04-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-09T18:55:25+08:00">
+                2017-04-09
               </time>
             
 
@@ -310,7 +310,7 @@
 
           
               <div class="post-description">
-                  学习java三个月，重新梳理复习IO流的知识。适合初学者阅览
+                  复习&nps;JAVA&nps;的接口部分的知识。
               </div>
           
 
@@ -325,34 +325,20 @@
       
 
       
-        <h1 id="File-类"><a href="#File-类" class="headerlink" title="File 类"></a>File 类</h1><p>该类可以新建，删除，重命名文件和目录，但不能访问文件本身。</p>
-<ul>
-<li><p>访问文件名：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">getName();<span class="comment">//返回该对象所表示的文件名或路径</span></div><div class="line">getPath();<span class="comment">//返回该对象所对应的路径名</span></div><div class="line">renameTo(File newName)；<span class="comment">//重命名此 File 对象的文件或目录</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>文件检测</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exists();<span class="comment">//判断 file 对象对应的文件或目录是否存在</span></div><div class="line">isFile();<span class="comment">//判断 file 对象是不是文件</span></div><div class="line">isDirectory();<span class="comment">//判断是不是目录;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>获取文件信息</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lastModified();<span class="comment">//返回文件的最后修改时间</span></div><div class="line">length();<span class="comment">//返回文件内容的长度</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>文件、目录操作</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">createNewFile();<span class="comment">//当对象对应的文件不存在的时候，该方法将新建一个该file对象指定的新文件</span></div><div class="line">list();<span class="comment">//列出所有的File对象的所有子文件名和路径名</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="JAVA的IO流"><a href="#JAVA的IO流" class="headerlink" title="JAVA的IO流"></a>JAVA的IO流</h1><ul>
-<li>字节流：处理二进制文件<br>抽象基类 &nps;InputStream&nps; 和&nps;OutputStream<br>缓冲流  &nps; BufferedInputStream &nps;和 &nps;BufferedOutputStream</li>
-<li><p>字符流：处理文本文件<br>抽象基类 &nps;Reader &nps;和&nps; Writer<br>缓冲流 &nps;BufferedReader &nps;和&nps; BufferedWriter</p>
-</li>
-<li><p>转换流：将字节流转换成字符流<br>&nps;nputStreamReader&nps; 和&nps; OutputStreamWriter<br>为了更高效，我们通常可以进行这样的处理<br>！()[<a href="https://raw.githubusercontent.com/rexana3/picture/master/IO%E6%B5%81/1.png" target="_blank" rel="external">https://raw.githubusercontent.com/rexana3/picture/master/IO%E6%B5%81/1.png</a>]</p>
-</li>
-<li>注意小事项</li>
-</ul>
-<ol>
-<li>java的io流执行输出的时候，要关闭输出流，否则，有可能导致一些数据还在缓冲区中，没有输出来，造成数据丢失</li>
-<li>BufferdReader的readline()方法是阻塞式的，当读取的文本到达末尾的时候，它并不会返回null，而是一直等待新的输入。这个问题在上一篇博文进行了详述。感兴趣的可以看一看。</li>
+        <h1 id="接口的概念"><a href="#接口的概念" class="headerlink" title="接口的概念"></a>接口的概念</h1><p>接口不提供任何实现，它体现的是规范和实现分离的设计哲学。它定义的是多个类共同的公共行为规范。<br>所以，在前面的聊天小程序中，实际上可以使用接口来进行一些定义，让客户端和服务端都遵守，以判断发送的文件是什么类型以及是公聊还是私聊</p>
+<h1 id="接口的用途"><a href="#接口的用途" class="headerlink" title="接口的用途"></a>接口的用途</h1><ol>
+<li>被实现类实现</li>
+<li>定义变量，可用于强制类型转换</li>
+<li>调用接口中定义的常量</li>
 </ol>
-
+<h1 id="接口的基本语法"><a href="#接口的基本语法" class="headerlink" title="接口的基本语法"></a>接口的基本语法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[修饰符] <span class="class"><span class="keyword">interface</span> 接口名  <span class="keyword">extends</span> 父接口</span></div><div class="line">&#123;</div><div class="line">    常量定义；</div><div class="line">    抽象方法定义；</div><div class="line">    内部类、接口、枚举定义；</div><div class="line">    默认方法默认类定义；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>JAVA源文件里最多只能有一个public接口，如果有这样的一个接口，源文件的主文件名必须与该接口名相同</li>
+<li>接口的所有成员都是public 访问权限。</li>
+<li>定义成员变量系统会自动为其增加 public static final</li>
+<li>成员变量只能在定义时指定默认值。</li>
+</ul>
+<h1 id="类实现接口"><a href="#类实现接口" class="headerlink" title="类实现接口"></a>类实现接口</h1>
       
     </div>
 
@@ -403,8 +389,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/14/JAVA网络编程/" rel="next" title="JAVA网络编程">
-                <i class="fa fa-chevron-left"></i> JAVA网络编程
+              <a href="/2017/04/09/反正你也看不懂/" rel="next" title="反正你也看不懂">
+                <i class="fa fa-chevron-left"></i> 反正你也看不懂
               </a>
             
           </div>
@@ -412,10 +398,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/09/反正你也看不懂/" rel="prev" title="反正你也看不懂">
-                反正你也看不懂 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,7 +508,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#File-类"><span class="nav-number">1.</span> <span class="nav-text">File 类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JAVA的IO流"><span class="nav-number">2.</span> <span class="nav-text">JAVA的IO流</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#接口的概念"><span class="nav-number">1.</span> <span class="nav-text">接口的概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口的用途"><span class="nav-number">2.</span> <span class="nav-text">接口的用途</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口的基本语法"><span class="nav-number">3.</span> <span class="nav-text">接口的基本语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类实现接口"><span class="nav-number">4.</span> <span class="nav-text">类实现接口</span></a></li></ol></div>
             
 
           </div>
