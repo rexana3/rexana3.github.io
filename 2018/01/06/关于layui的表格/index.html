@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JAVA," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="学习java三个月，重新梳理复习IO流的知识。适合初学者阅览">
+<meta name="description" content="使用layui创建空白表格，在前端输入数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IO流基础知识梳理">
-<meta property="og:url" content="http://yoursite.com/2017/04/04/IO流基础知识梳理/index.html">
+<meta property="og:title" content="关于layui的表格">
+<meta property="og:url" content="http://yoursite.com/2018/01/06/关于layui的表格/index.html">
 <meta property="og:site_name" content="Rexana">
-<meta property="og:description" content="学习java三个月，重新梳理复习IO流的知识。适合初学者阅览">
-<meta property="og:updated_time" content="2017-04-11T09:12:01.630Z">
+<meta property="og:description" content="使用layui创建空白表格，在前端输入数据">
+<meta property="og:updated_time" content="2018-01-06T06:04:26.873Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IO流基础知识梳理">
-<meta name="twitter:description" content="学习java三个月，重新梳理复习IO流的知识。适合初学者阅览">
+<meta name="twitter:title" content="关于layui的表格">
+<meta name="twitter:description" content="使用layui创建空白表格，在前端输入数据">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/04/IO流基础知识梳理/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/06/关于layui的表格/"/>
 
 
 
 
 
-  <title> IO流基础知识梳理 | Rexana </title>
+  <title> 关于layui的表格 | Rexana </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +249,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/IO流基础知识梳理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/06/关于layui的表格/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rexana">
@@ -270,7 +270,7 @@
             
             
               
-                IO流基础知识梳理
+                关于layui的表格
               
             
           </h1>
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T21:08:06+08:00">
-                2017-04-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-06T13:57:31+08:00">
+                2018-01-06
               </time>
             
 
@@ -310,7 +310,7 @@
 
           
               <div class="post-description">
-                  学习java三个月，重新梳理复习IO流的知识。适合初学者阅览
+                  使用layui创建空白表格，在前端输入数据
               </div>
           
 
@@ -325,33 +325,8 @@
       
 
       
-        <h1 id="File-类"><a href="#File-类" class="headerlink" title="File 类"></a>File 类</h1><p>该类可以新建，删除，重命名文件和目录，但不能访问文件本身。</p>
-<ul>
-<li><p>访问文件名：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">getName();<span class="comment">//返回该对象所表示的文件名或路径</span></div><div class="line">getPath();<span class="comment">//返回该对象所对应的路径名</span></div><div class="line">renameTo(File newName)；<span class="comment">//重命名此 File 对象的文件或目录</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>文件检测</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exists();<span class="comment">//判断 file 对象对应的文件或目录是否存在</span></div><div class="line">isFile();<span class="comment">//判断 file 对象是不是文件</span></div><div class="line">isDirectory();<span class="comment">//判断是不是目录;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>获取文件信息</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lastModified();<span class="comment">//返回文件的最后修改时间</span></div><div class="line">length();<span class="comment">//返回文件内容的长度</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>文件、目录操作</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">createNewFile();<span class="comment">//当对象对应的文件不存在的时候，该方法将新建一个该file对象指定的新文件</span></div><div class="line">list();<span class="comment">//列出所有的File对象的所有子文件名和路径名</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="JAVA的IO流"><a href="#JAVA的IO流" class="headerlink" title="JAVA的IO流"></a>JAVA的IO流</h1><ul>
-<li>字节流：处理二进制文件<br>抽象基类 &nps;InputStream&nps; 和&nps;OutputStream<br>缓冲流  &nps; BufferedInputStream &nps;和 &nps;BufferedOutputStream</li>
-<li><p>字符流：处理文本文件<br>抽象基类 &nps;Reader &nps;和&nps; Writer<br>缓冲流 &nps;BufferedReader &nps;和&nps; BufferedWriter</p>
-</li>
-<li><p>转换流：将字节流转换成字符流<br>&nps;nputStreamReader&nps; 和&nps; OutputStreamWriter<br>为了更高效，我们通常可以进行这样的处理<br>！()[<a href="https://raw.githubusercontent.com/rexana3/picture/master/IO%E6%B5%81/1.png" target="_blank" rel="external">https://raw.githubusercontent.com/rexana3/picture/master/IO%E6%B5%81/1.png</a>]</p>
-</li>
-<li>注意小事项</li>
-</ul>
-<ol>
-<li>java的io流执行输出的时候，要关闭输出流，否则，有可能导致一些数据还在缓冲区中，没有输出来，造成数据丢失</li>
-<li>BufferdReader的readline()方法是阻塞式的，当读取的文本到达末尾的时候，它并不会返回null，而是一直等待新的输入。这个问题在上一篇博文进行了详述。感兴趣的可以看一看。</li>
-</ol>
+        <p>最近在做一个提供数据输入功能的网页，使用layui进行布局。需要创建一个空白表格供使用者输入数据。而官方案例均为从后台获取数据形成已有数据的表格。点击按钮，添加一行空白表格。代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;table id=&quot;inputData&quot; lay-filter=&quot;test&quot;&gt;&lt;/table&gt;</div><div class="line">    &lt;button id=&quot;btn&quot; class=&quot;layui-btn&quot; lay-filter=&apos;btn&apos;&gt;添加&lt;/button&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    layui.use([&apos;jquery&apos;,&apos;table&apos;], function()&#123;</div><div class="line">      var $ = layui.jquery,</div><div class="line">        table = layui.table;</div><div class="line">      var tableIns = table.render(&#123;</div><div class="line">        id:&apos;inputData&apos;</div><div class="line">        ,elem: &apos;#inputData&apos;</div><div class="line">        ,data: [&#123;&#125;]</div><div class="line">        ,height: 315</div><div class="line">        ,page: true //开启分页</div><div class="line">        ,cols: [[ //表头</div><div class="line">          &#123;field: &apos;firid&apos;, title: &apos;ID&apos;, width:30,  fixed: &apos;left&apos;,edit:&apos;text&apos;&#125;</div><div class="line">          ,&#123;field: &apos;fishName&apos;, title: &apos;鱼名&apos;, width:120,edit:&apos;text&apos;&#125;</div><div class="line">          ,&#123;field: &apos;weigth&apos;, title: &apos;重量/kg&apos;, width:80,edit:&apos;text&apos;&#125;</div><div class="line">          ,&#123;field: &apos;price&apos;, title: &apos;单价&apos;, width:60,edit:&apos;text&apos;&#125; </div><div class="line">        ]]</div><div class="line">      &#125;);</div><div class="line">        $(&apos;#btn&apos;).on(&apos;click&apos;,function()&#123;</div><div class="line">            table.cache[&apos;inputData&apos;].push([&#123;&#125;]);</div><div class="line">            tableIns.reload(&#123;</div><div class="line">                data:table.cache[&apos;inputData&apos;]</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>此处必须注意，table.render 中必须有id和data，否则会报错：push未定义。</p>
 
       
     </div>
@@ -394,12 +369,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
-          
-        </div>
-      
 
       
         
@@ -409,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/14/JAVA网络编程/" rel="next" title="JAVA网络编程">
-                <i class="fa fa-chevron-left"></i> JAVA网络编程
+              <a href="/2017/10/11/顺欣项目布局/" rel="next" title="顺欣项目布局">
+                <i class="fa fa-chevron-left"></i> 顺欣项目布局
               </a>
             
           </div>
@@ -418,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/09/巧用接口/" rel="prev" title="巧用接口">
-                巧用接口 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -468,17 +433,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/qiao.jpg"
@@ -531,22 +487,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#File-类"><span class="nav-number">1.</span> <span class="nav-text">File 类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JAVA的IO流"><span class="nav-number">2.</span> <span class="nav-text">JAVA的IO流</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

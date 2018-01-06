@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JAVA," />
+  <meta name="keywords" content="顺欣项目," />
 
 
 
@@ -87,16 +87,18 @@
 
 
 
-<meta name="description" content="学习java三个月，重新梳理复习IO流的知识。适合初学者阅览">
+<meta name="description" content="关于该网站的网页设计，页面布局，以及前期的准备工作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IO流基础知识梳理">
-<meta property="og:url" content="http://yoursite.com/2017/04/04/IO流基础知识梳理/index.html">
+<meta property="og:title" content="顺欣项目布局">
+<meta property="og:url" content="http://yoursite.com/2017/10/11/顺欣项目布局/index.html">
 <meta property="og:site_name" content="Rexana">
-<meta property="og:description" content="学习java三个月，重新梳理复习IO流的知识。适合初学者阅览">
-<meta property="og:updated_time" content="2017-04-11T09:12:01.630Z">
+<meta property="og:description" content="关于该网站的网页设计，页面布局，以及前期的准备工作">
+<meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.png">
+<meta property="og:updated_time" content="2017-10-11T05:51:11.201Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IO流基础知识梳理">
-<meta name="twitter:description" content="学习java三个月，重新梳理复习IO流的知识。适合初学者阅览">
+<meta name="twitter:title" content="顺欣项目布局">
+<meta name="twitter:description" content="关于该网站的网页设计，页面布局，以及前期的准备工作">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.png">
 
 
 
@@ -124,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/04/IO流基础知识梳理/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/11/顺欣项目布局/"/>
 
 
 
 
 
-  <title> IO流基础知识梳理 | Rexana </title>
+  <title> 顺欣项目布局 | Rexana </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +251,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/IO流基础知识梳理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/顺欣项目布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rexana">
@@ -270,7 +272,7 @@
             
             
               
-                IO流基础知识梳理
+                顺欣项目布局
               
             
           </h1>
@@ -285,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T21:08:06+08:00">
-                2017-04-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-11T13:43:12+08:00">
+                2017-10-11
               </time>
             
 
@@ -310,7 +312,7 @@
 
           
               <div class="post-description">
-                  学习java三个月，重新梳理复习IO流的知识。适合初学者阅览
+                  关于该网站的网页设计，页面布局，以及前期的准备工作
               </div>
           
 
@@ -325,33 +327,8 @@
       
 
       
-        <h1 id="File-类"><a href="#File-类" class="headerlink" title="File 类"></a>File 类</h1><p>该类可以新建，删除，重命名文件和目录，但不能访问文件本身。</p>
-<ul>
-<li><p>访问文件名：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">getName();<span class="comment">//返回该对象所表示的文件名或路径</span></div><div class="line">getPath();<span class="comment">//返回该对象所对应的路径名</span></div><div class="line">renameTo(File newName)；<span class="comment">//重命名此 File 对象的文件或目录</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>文件检测</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exists();<span class="comment">//判断 file 对象对应的文件或目录是否存在</span></div><div class="line">isFile();<span class="comment">//判断 file 对象是不是文件</span></div><div class="line">isDirectory();<span class="comment">//判断是不是目录;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>获取文件信息</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lastModified();<span class="comment">//返回文件的最后修改时间</span></div><div class="line">length();<span class="comment">//返回文件内容的长度</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>文件、目录操作</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">createNewFile();<span class="comment">//当对象对应的文件不存在的时候，该方法将新建一个该file对象指定的新文件</span></div><div class="line">list();<span class="comment">//列出所有的File对象的所有子文件名和路径名</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="JAVA的IO流"><a href="#JAVA的IO流" class="headerlink" title="JAVA的IO流"></a>JAVA的IO流</h1><ul>
-<li>字节流：处理二进制文件<br>抽象基类 &nps;InputStream&nps; 和&nps;OutputStream<br>缓冲流  &nps; BufferedInputStream &nps;和 &nps;BufferedOutputStream</li>
-<li><p>字符流：处理文本文件<br>抽象基类 &nps;Reader &nps;和&nps; Writer<br>缓冲流 &nps;BufferedReader &nps;和&nps; BufferedWriter</p>
-</li>
-<li><p>转换流：将字节流转换成字符流<br>&nps;nputStreamReader&nps; 和&nps; OutputStreamWriter<br>为了更高效，我们通常可以进行这样的处理<br>！()[<a href="https://raw.githubusercontent.com/rexana3/picture/master/IO%E6%B5%81/1.png" target="_blank" rel="external">https://raw.githubusercontent.com/rexana3/picture/master/IO%E6%B5%81/1.png</a>]</p>
-</li>
-<li>注意小事项</li>
-</ul>
-<ol>
-<li>java的io流执行输出的时候，要关闭输出流，否则，有可能导致一些数据还在缓冲区中，没有输出来，造成数据丢失</li>
-<li>BufferdReader的readline()方法是阻塞式的，当读取的文本到达末尾的时候，它并不会返回null，而是一直等待新的输入。这个问题在上一篇博文进行了详述。感兴趣的可以看一看。</li>
-</ol>
+        <h2 id="分析网站功能"><a href="#分析网站功能" class="headerlink" title="分析网站功能"></a>分析网站功能</h2><p>该网站主要用于生产管理，需要囊括的内容为：公司简介，实时鱼类信息，生产地理信息，生产数据表格。<br>因此将该网站分为四个页面。该网站主要用于移动端。故考虑使用bootstrap做响应式布局。</p>
+<h2 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h2><p><img src="https://raw.githubusercontent.com/rexana3/picture/master/JAVA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.png" alt="4"><br>背景色：#2e488d；<br>集团名称颜色：#8098bd；<br>字体颜色：#eceef1;</p>
 
       
     </div>
@@ -396,7 +373,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+            <a href="/tags/顺欣项目/" rel="tag"># 顺欣项目</a>
           
         </div>
       
@@ -409,8 +386,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/14/JAVA网络编程/" rel="next" title="JAVA网络编程">
-                <i class="fa fa-chevron-left"></i> JAVA网络编程
+              <a href="/2017/09/28/javascript/" rel="next" title="javascript">
+                <i class="fa fa-chevron-left"></i> javascript
               </a>
             
           </div>
@@ -419,8 +396,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/09/巧用接口/" rel="prev" title="巧用接口">
-                巧用接口 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/06/关于layui的表格/" rel="prev" title="关于layui的表格">
+                关于layui的表格 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -541,7 +518,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#File-类"><span class="nav-number">1.</span> <span class="nav-text">File 类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JAVA的IO流"><span class="nav-number">2.</span> <span class="nav-text">JAVA的IO流</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分析网站功能"><span class="nav-number">1.</span> <span class="nav-text">分析网站功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页"><span class="nav-number">2.</span> <span class="nav-text">首页</span></a></li></ol></div>
             
 
           </div>
