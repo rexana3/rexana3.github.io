@@ -250,6 +250,246 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/github上传代码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rexana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qiao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rexana">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/04/27/github上传代码/" itemprop="url">
+                  github上传代码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T17:55:59+08:00">
+                2018-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>在github个人主页创建一个新的仓库，点击按钮 “clone or download”,复制仓库地址：git@github.com:rexana3/test.git</p>
+<h2 id="git-clone-git-github-com-rexana3-test-git"><a href="#git-clone-git-github-com-rexana3-test-git" class="headerlink" title="git clone git@github.com:rexana3/test.git"></a>git clone git@github.com:rexana3/test.git</h2><p>打开一个地址（假设为E：/）,点击鼠标右键，选择“git bash”，<br>输入“git clone git@github.com:rexana3/test.git”，在E盘中会出现一个新的文件夹，名为：test。关闭命令行窗口，进入test文件夹（里面有一个.git文件夹和一个readme.md的文件）。右键再次打开“git bash”。</p>
+<h2 id="git-add-Demo-html"><a href="#git-add-Demo-html" class="headerlink" title="git add Demo.html"></a>git add Demo.html</h2><p>输入 “git add XXX”，XXX表示要上传的文件名。“git add *” 表示上传所有文件</p>
+<h2 id="git-commit-m-“update”"><a href="#git-commit-m-“update”" class="headerlink" title="git commit -m “update”"></a>git commit -m “update”</h2><p>“update” 为备注内容</p>
+<h2 id="git-push-u-origin-master"><a href="#git-push-u-origin-master" class="headerlink" title="git push -u origin master"></a>git push -u origin master</h2>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/12/AJAX和PHP传输数据/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rexana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qiao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rexana">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/01/12/AJAX和PHP传输数据/" itemprop="url">
+                  AJAX和PHP传输数据
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-12T20:33:02+08:00">
+                2018-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>html 文件代码：<br>    $.get(‘<a href="http://127.0.0.1/NanHaiFishStatistics/php/first.php" target="_blank" rel="external">http://127.0.0.1/NanHaiFishStatistics/php/first.php</a>‘, { “name”: “John”, “time”: “2pm” });<br>    第一个参数是php文件的地址，第二个参数是被传输的数据<br>php 文件代码：<br>&lt;?php<br>$username=$_GET[“name”]; //获取name对应的值<br>$usertime=$_GET[“time”]; //获取time对应的值<br>$myarr =array(           //存储到数组中<br>    “myname” =&gt; $username,<br>    “mytime” =&gt; $usertime<br>);<br>$text =var_export($myarr,true); //将数组直接保存为数组形式存储到文本文件中<br>echo file_put_contents(“test.txt”,$text); //第一个参数是文件名，第二个参数是数据</p>
+<p>将数组存储为json文件：<br>$baseJson = json_encode($baseArr);<br>file_put_contents(“$fileName.json”,$baseJson);<br>将json转化为数组：<br>$baseJson = file_get_contents(“$fileName.json”);<br>$data = json_decode($baseJson, true);<br>注意事项：<br>1.为了检验数据是否正常传输，新手往往会在php文件中将接收到的数据打印出来，<br>比如： printf（$_GET[“name”]）；<br>这个时候，在浏览器打开php文件，网页显示未定义变量name；这是因为HTTP是短连接，当直接访问php的时候，该变量已失效。所以，为了检验代码的正确性，最好直接将代码写入文件中。<br>2.写入文件的时候，只保存了键值对中的值。<br>file_put_contents(“test.txt”,$myarr); //将未处理过的数组直接写入文件<br> 只保存了键的值，键名没有进行存储。<br>3.用变量来作为文件名<br>$fileName =$_GET[“formNum”];<br>file_put_contents(“$fileName.txt”,$baseText);</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/06/关于layui的表格/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -330,128 +570,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/06/关于layui的表格/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/顺欣项目布局/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Rexana">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qiao.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rexana">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/11/顺欣项目布局/" itemprop="url">
-                  顺欣项目布局
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-11T13:43:12+08:00">
-                2017-10-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          关于该网站的网页设计，页面布局，以及前期的准备工作
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/11/顺欣项目布局/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1388,7 +1506,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1401,7 +1519,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
