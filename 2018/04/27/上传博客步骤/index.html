@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JAVA," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -87,16 +87,22 @@
 
 
 
-<meta name="description" content="复习&amp;nps;JAVA&amp;nps;的接口部分的知识。">
+<meta name="description" content="hexo new test在博客的根目录下，点击鼠标右键，打开“git bash”，输入“hexo new 文章题目”例如，输入 hexo new test，创建一篇题目为“test”的博客文章
+hexo d -g上传
+hexo s -g本地预览，地址为： http://localhost:4000/按ctrl + c 结束预览">
 <meta property="og:type" content="article">
-<meta property="og:title" content="巧用接口">
-<meta property="og:url" content="http://yoursite.com/2017/04/09/巧用接口/index.html">
+<meta property="og:title" content="上传博客步骤">
+<meta property="og:url" content="http://yoursite.com/2018/04/27/上传博客步骤/index.html">
 <meta property="og:site_name" content="Rexana">
-<meta property="og:description" content="复习&amp;nps;JAVA&amp;nps;的接口部分的知识。">
-<meta property="og:updated_time" content="2017-04-11T09:12:46.954Z">
+<meta property="og:description" content="hexo new test在博客的根目录下，点击鼠标右键，打开“git bash”，输入“hexo new 文章题目”例如，输入 hexo new test，创建一篇题目为“test”的博客文章
+hexo d -g上传
+hexo s -g本地预览，地址为： http://localhost:4000/按ctrl + c 结束预览">
+<meta property="og:updated_time" content="2018-04-27T10:21:44.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="巧用接口">
-<meta name="twitter:description" content="复习&amp;nps;JAVA&amp;nps;的接口部分的知识。">
+<meta name="twitter:title" content="上传博客步骤">
+<meta name="twitter:description" content="hexo new test在博客的根目录下，点击鼠标右键，打开“git bash”，输入“hexo new 文章题目”例如，输入 hexo new test，创建一篇题目为“test”的博客文章
+hexo d -g上传
+hexo s -g本地预览，地址为： http://localhost:4000/按ctrl + c 结束预览">
 
 
 
@@ -124,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/09/巧用接口/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/27/上传博客步骤/"/>
 
 
 
 
 
-  <title> 巧用接口 | Rexana </title>
+  <title> 上传博客步骤 | Rexana </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +255,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/09/巧用接口/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/上传博客步骤/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rexana">
@@ -270,7 +276,7 @@
             
             
               
-                巧用接口
+                上传博客步骤
               
             
           </h1>
@@ -285,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-09T18:55:25+08:00">
-                2017-04-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T18:17:35+08:00">
+                2018-04-27
               </time>
             
 
@@ -309,10 +315,6 @@
           
 
           
-              <div class="post-description">
-                  复习&nps;JAVA&nps;的接口部分的知识。
-              </div>
-          
 
         </div>
       </header>
@@ -325,20 +327,10 @@
       
 
       
-        <h1 id="接口的概念"><a href="#接口的概念" class="headerlink" title="接口的概念"></a>接口的概念</h1><p>接口不提供任何实现，它体现的是规范和实现分离的设计哲学。它定义的是多个类共同的公共行为规范。<br>所以，在前面的聊天小程序中，实际上可以使用接口来进行一些定义，让客户端和服务端都遵守，以判断发送的文件是什么类型以及是公聊还是私聊</p>
-<h1 id="接口的用途"><a href="#接口的用途" class="headerlink" title="接口的用途"></a>接口的用途</h1><ol>
-<li>被实现类实现</li>
-<li>定义变量，可用于强制类型转换</li>
-<li>调用接口中定义的常量</li>
-</ol>
-<h1 id="接口的基本语法"><a href="#接口的基本语法" class="headerlink" title="接口的基本语法"></a>接口的基本语法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[修饰符] <span class="class"><span class="keyword">interface</span> 接口名  <span class="keyword">extends</span> 父接口</span></div><div class="line">&#123;</div><div class="line">    常量定义；</div><div class="line">    抽象方法定义；</div><div class="line">    内部类、接口、枚举定义；</div><div class="line">    默认方法默认类定义；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>JAVA源文件里最多只能有一个public接口，如果有这样的一个接口，源文件的主文件名必须与该接口名相同</li>
-<li>接口的所有成员都是public 访问权限。</li>
-<li>定义成员变量系统会自动为其增加 public static final</li>
-<li>成员变量只能在定义时指定默认值。</li>
-</ul>
-<h1 id="类实现接口"><a href="#类实现接口" class="headerlink" title="类实现接口"></a>类实现接口</h1>
+        <h2 id="hexo-new-test"><a href="#hexo-new-test" class="headerlink" title="hexo new test"></a>hexo new test</h2><p>在博客的根目录下，点击鼠标右键，打开“git bash”，输入“hexo new 文章题目”<br>例如，输入 hexo new test，创建一篇题目为“test”的博客文章</p>
+<h2 id="hexo-d-g"><a href="#hexo-d-g" class="headerlink" title="hexo d -g"></a>hexo d -g</h2><p>上传</p>
+<h2 id="hexo-s-g"><a href="#hexo-s-g" class="headerlink" title="hexo s -g"></a>hexo s -g</h2><p>本地预览，地址为： <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><br>按ctrl + c 结束预览</p>
+
       
     </div>
 
@@ -380,12 +372,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
-          
-        </div>
-      
 
       
         
@@ -395,8 +381,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/04/IO流基础知识梳理/" rel="next" title="IO流基础知识梳理">
-                <i class="fa fa-chevron-left"></i> IO流基础知识梳理
+              <a href="/2018/04/27/github上传代码/" rel="next" title="github上传代码">
+                <i class="fa fa-chevron-left"></i> github上传代码
               </a>
             
           </div>
@@ -404,10 +390,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/25/弹幕-随机数练习/" rel="prev" title="弹幕+随机数练习">
-                弹幕+随机数练习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -527,7 +509,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#接口的概念"><span class="nav-number">1.</span> <span class="nav-text">接口的概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口的用途"><span class="nav-number">2.</span> <span class="nav-text">接口的用途</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口的基本语法"><span class="nav-number">3.</span> <span class="nav-text">接口的基本语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类实现接口"><span class="nav-number">4.</span> <span class="nav-text">类实现接口</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-new-test"><span class="nav-number">1.</span> <span class="nav-text">hexo new test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-d-g"><span class="nav-number">2.</span> <span class="nav-text">hexo d -g</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-s-g"><span class="nav-number">3.</span> <span class="nav-text">hexo s -g</span></a></li></ol></div>
             
 
           </div>
