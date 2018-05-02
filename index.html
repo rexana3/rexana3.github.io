@@ -250,6 +250,247 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/拖拽及其扩展/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rexana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qiao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rexana">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/05/02/拖拽及其扩展/" itemprop="url">
+                  拖拽及其扩展
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T13:57:21+08:00">
+                2018-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="拖拽的应用"><a href="#拖拽的应用" class="headerlink" title="拖拽的应用"></a>拖拽的应用</h3><pre><code>拖拽是一个很常用的功能，比如滚动条的拖拽，桌面图标的拖拽，以及一些小游戏上的应用。拖拽除了可以改变元素的位置，还可以改变元素的小大。下面记录拖拽功能的基本实现。
+</code></pre><h3 id="拖拽的原理"><a href="#拖拽的原理" class="headerlink" title="拖拽的原理"></a>拖拽的原理</h3><p>鼠标点击选中元素，鼠标移动，元素跟着移动，释放鼠标，元素不再移动。</p>
+<h3 id="改变位置的拖拽"><a href="#改变位置的拖拽" class="headerlink" title="改变位置的拖拽"></a>改变位置的拖拽</h3><p>元素大小已确定，改变元素的位置，可以改变margin值，也可以改变padding。不过常用的方法是给元素加一个绝对定位“position：absolute”，然后改变元素的top值和left值<br>1.定义一个元素,设置宽高<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">   .myDiv&#123;</div><div class="line">       position: absolute;  //这一句必须加上，否则无法用top和left进行定位</div><div class="line">       top:200px;</div><div class="line">       left:500px;</div><div class="line">       width: 100px;</div><div class="line">       height: 100px;</div><div class="line">   &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;body&gt;</div><div class="line">   &lt;div id=&quot;myDiv&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">window.onload = function()&#123;</div><div class="line">   var oDiv = document.getElementById(&apos;myDiv&apos;);  //获取我的DIV</div><div class="line">   var divLeft = oDiv.offsetLeft; //得到此时div的left值</div><div class="line">   var divTop = oDiv.offsetTop;//得到此时div的top值</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>2.点击时获取鼠标点击点的X值和Y值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">oDiv.onmousedown = function(ev)&#123;</div><div class="line">    var ev = ev||event;</div><div class="line">    var x = ev.clientX; //获取点击点的x值</div><div class="line">    var y = ev.clientY; //获取点击点的y值</div><div class="line">    var disX = x - divLeft; //得到鼠标点击点与div左边缘的差值</div><div class="line">    var disY = y - divTop;//得到鼠标点击点与div上边缘的差值</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3.鼠标移动和释放<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">oDiv.onmousedown = function(ev)&#123;</div><div class="line">    var ev = ev||event;</div><div class="line">    var x = ev.clientX; //获取点击点的x值</div><div class="line">    var y = ev.clientY; //获取点击点的y值</div><div class="line">    var disX = x - divLeft; //得到鼠标点击点与div左边缘的差值</div><div class="line">    var disY = y - divTop;//得到鼠标点击点与div上边缘的差值</div><div class="line">    //此处应该为document.onmousemove,如果是oDiv.onmousemove会导致鼠标移动太快，div跟不上，而使得鼠标和div失去联系</div><div class="line">    document.onmousemove = function(ev)&#123;</div><div class="line">                var ev = ev || event;</div><div class="line">                var newLeft = ev.clientX - disX;  //得到移动后div新的left值</div><div class="line">                var newTop = ev.clientY - disX;  //得到移动后div新的top值</div><div class="line">                oDiv.style.left = newLeft +&quot;px&quot;;  //改变left值，一定要加上“px&quot;</div><div class="line">                oDiv.style.top= newTop +&quot;px&quot;;//改变top值，一定要加上“px&quot;</div><div class="line">     &#125;</div><div class="line">     document.onmouseup = function()&#123;</div><div class="line">         document.onmousemove = document.onmouseup =null; //清空函数</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>如果是改变div的大小的话，要分情况讨论<br>1.鼠标右移或下移<br>则增加width和height的值即可，无需改变top和left<br>2.鼠标左移或上移<br>两者均改变。<br>例如通过拖拽绘制方框就涉及到这两方面的考虑<br>具体代码可见：<a href="https://github.com/rexana3/drag" target="_blank" rel="external">https://github.com/rexana3/drag</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/学习日志/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rexana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qiao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rexana">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/04/27/学习日志/" itemprop="url">
+                  学习日志
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T19:56:41+08:00">
+                2018-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="2018-4-23"><a href="#2018-4-23" class="headerlink" title="2018-4-23"></a>2018-4-23</h4><p>拖拽功能，改变层大小，碰撞检测</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/上传博客步骤/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1211,250 +1452,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/JAVA网络编程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Rexana">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qiao.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rexana">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/14/JAVA网络编程/" itemprop="url">
-                  JAVA网络编程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T20:27:30+08:00">
-                2017-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          第一次接触java的UDP和TCP遇到的小问题以及模拟聊天软件的制作过程。适合有java基础刚接触网络编程的人群。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/14/JAVA网络编程/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/那些年跳过的坑-hexo-github/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Rexana">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/qiao.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rexana">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/11/那些年跳过的坑-hexo-github/" itemprop="url">
-                  那些年跳过的坑--hexo+github
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T12:53:50+08:00">
-                2017-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>简要：本文只是简单记录了搭建个人博客的过程以及遇到的并且在搜不到解决方案的问题。适合有配置经验或者配置过程遇到相同问题的小伙伴阅读。<br>背景：下载安装好hexo和Git，<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/11/那些年跳过的坑-hexo-github/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1504,7 +1501,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
