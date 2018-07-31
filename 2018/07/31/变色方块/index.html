@@ -1,0 +1,683 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="点击方块，改变方块本身及相邻方块颜色，所有方块颜色改变即过关。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="变色方块">
+<meta property="og:url" content="http://yoursite.com/2018/07/31/变色方块/index.html">
+<meta property="og:site_name" content="Rexana">
+<meta property="og:description" content="点击方块，改变方块本身及相邻方块颜色，所有方块颜色改变即过关。">
+<meta property="og:updated_time" content="2018-07-31T04:08:00.772Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="变色方块">
+<meta name="twitter:description" content="点击方块，改变方块本身及相邻方块颜色，所有方块颜色改变即过关。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/31/变色方块/"/>
+
+
+
+
+
+  <title> 变色方块 | Rexana </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rexana</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/变色方块/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rexana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/qiao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rexana">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                变色方块
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T10:20:44+08:00">
+                2018-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  点击方块，改变方块本身及相邻方块颜色，所有方块颜色改变即过关。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###页面部分<br>HTML文档的结构非常简单，我们的游戏将呈现在这个HTML中id为game的div中，一个li标签，表示一个方块。在style中为按钮及方格添加样式。创建一个HTML文件，将它保存在你理想的位置，名称为index.html。并为这个文件添加以下代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;utf-8&quot; /&gt;</div><div class="line">        &lt;title&gt;自动完成&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        body&#123;</div><div class="line">            background: #FFFFCF;</div><div class="line">            padding: 0;</div><div class="line">            margin: 0;</div><div class="line">        &#125;</div><div class="line">        #container&#123;</div><div class="line">            width: 900px;</div><div class="line">            height: 700px;</div><div class="line">            background: white;</div><div class="line">            margin: 0 auto;</div><div class="line">        &#125;</div><div class="line">        #backAll,#backThis,#help,#status&#123;</div><div class="line">            width: 80px;</div><div class="line">            height: 30px;</div><div class="line">            border: 4px #fffccf solid;</div><div class="line">            background: white;</div><div class="line">            border-radius: 8px;</div><div class="line">            margin-top: 10px;</div><div class="line">            outline: none; </div><div class="line">        &#125;</div><div class="line">        #game&#123;</div><div class="line">            margin: 20px 0px 0px 20px;</div><div class="line">            width: 560px;</div><div class="line">            height: 560px;</div><div class="line">            border-top: 5px solid black;</div><div class="line">            border-right: 5px solid black;</div><div class="line">            border-radius: 10px;</div><div class="line">            padding: 0;</div><div class="line">        &#125;</div><div class="line">        ul&#123;</div><div class="line">            margin: 0;</div><div class="line">            padding: 0;</div><div class="line">        &#125;</div><div class="line">        li&#123;</div><div class="line">            padding: 0;</div><div class="line">            margin: 0;</div><div class="line">            list-style: none;</div><div class="line">            border-left: 5px solid black;</div><div class="line">            border-bottom: 5px solid black;</div><div class="line">            float: left;</div><div class="line">            background: #ea971f;</div><div class="line">        &#125;</div><div class="line">        #express&#123;</div><div class="line">            margin-left: 650px;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;div id=&quot;container&quot;&gt;</div><div class="line">            &lt;input type=&quot;button&quot; id=&quot;backAll&quot; value=&quot;重玩游戏&quot;/&gt;</div><div class="line">            &lt;input type=&quot;button&quot; id=&quot;backThis&quot; value=&quot;重玩本关&quot;/&gt;</div><div class="line">            &lt;input type=&quot;button&quot; id=&quot;help&quot; value=&quot;辅助方块&quot;/&gt;</div><div class="line">            &lt;input type=&quot;button&quot; id=&quot;status&quot; value=&quot;游戏说明&quot;/&gt;</div><div class="line">            &lt;div id=&quot;express&quot;&gt;</div><div class="line">                &lt;span id=&quot;myLevel&quot;&gt;关卡：1&lt;/span&gt;</div><div class="line">                &lt;span id=&quot;myStep&quot;&gt;步数：0&lt;/span&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">            &lt;div id=&quot;game&quot;&gt;</div><div class="line">                &lt;ul id=&quot;box&quot;&gt;</div><div class="line">                    &lt;li&gt;&lt;/li&gt;</div><div class="line">                    &lt;li&gt;&lt;/li&gt;</div><div class="line">                    &lt;li&gt;&lt;/li&gt;</div><div class="line">                    &lt;li&gt;&lt;/li&gt;</div><div class="line">                &lt;/ul&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>在浏览器中打开该文件，会显示出一个拥有2*2方格的方框。此时，点击按钮和方块都没有效果呈现。由于方块是动态的（即它的数量会发生变化），故，不应在html文件中添加li。所以将index.html文件中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;box&quot;&gt;</div><div class="line">    &lt;li&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<p>改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;box&quot;&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<p>我们将在javascript中动态添加li。以下代码全部位于<script></script>标签中</p>
+<p>###添加方块和方块点击<br>我们需要在页面加载完成之后再调用功能，所以，代码应放在window.onload中。<br>想要在ul（id名为box）中呈现图像内容，为它动态添加li,必须在JavaScript中获取到这个元素;同时，我们要决定方块的个数，假设一行的个数为num，则方格的个数为num*num。定义一个数组Oli，将li放入数组中，方便我们去操作li的属性。在JavaScript中添加以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">window.onload= function()&#123;</div><div class="line">    let Obox = document.getElementById(&apos;box&apos;);</div><div class="line">    let num = 1;</div><div class="line">    const Oli = [];</div><div class="line">    let Ostep = document.getElementById(&apos;myStep&apos;);  //获取元素，以改变步数值</div><div class="line">    let Olevel = document.getElementById(&apos;myLevel&apos;);//获取元素，以改变关卡值</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>因为UL的大小已经固定为560px*560px,所以，li的大小也要跟着个数的改变。li除了自身宽高，还有5px的边框，所以计算方式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let decent = num*5;</div><div class="line">let real = (560-decent)/num;</div></pre></td></tr></table></figure></p>
+<p>动态添加li，createElement创建元素，classList.add添加class，控制li的样式。 Oli.push将li放入数组中。 Obox.appendChild将新创建的li放到ul中。设置li的大小和颜色。<br>为li添加两个自定义属性：data-uid 和 data-usta 。data-uid便于我们找到相对应的li,从0开始计数。data-usta = 0代表该方块是橙色，data-usta = 1代表该方块是蓝色。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">for(let i=0;i&lt;num*num;i++)&#123;</div><div class="line">    let myLi = document.createElement(&apos;li&apos;);</div><div class="line">    myLi.classList.add(&quot;boxChild&quot;);</div><div class="line">    Oli.push(myLi);</div><div class="line">    Obox.appendChild(Oli[i]);</div><div class="line">    Oli[i].style.width = real/num +&quot;px&quot;;</div><div class="line">    Oli[i].style.height = real/num +&quot;px&quot;;</div><div class="line">    Oli[i].style.background = &quot;#ea971f&quot;;</div><div class="line">    Oli[i].setAttribute(&quot;data-uid&quot;,i);</div><div class="line">    Oli[i].setAttribute(&quot;data-usta&quot;,0);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>为了让代码能重复使用，我们将它封装成一个函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function changeBox(num,Oli)&#123;</div><div class="line">    let decent = num*5;</div><div class="line">    let real = (560-decent)/num;</div><div class="line">    for(let i=0;i&lt;num*num;i++)&#123;</div><div class="line">        let myLi = document.createElement(&apos;li&apos;);</div><div class="line">        myLi.classList.add(&quot;boxChild&quot;);</div><div class="line">        Oli.push(myLi);</div><div class="line">        Obox.appendChild(Oli[i]);</div><div class="line">        Oli[i].style.width = real +&quot;px&quot;;</div><div class="line">        Oli[i].style.height = real +&quot;px&quot;;</div><div class="line">        Oli[i].setAttribute(&quot;data-uid&quot;,i);</div><div class="line">        Oli[i].setAttribute(&quot;data-usta&quot;,0);</div><div class="line">        Oli[i].style.background = &quot;#ea971f&quot;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>并在  const Oli = []; 下面进行调用，以进行初始化。在const Oli = [];添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">changeBox(num,Oli);</div></pre></td></tr></table></figure></p>
+<p>此刻，我们的方块还不具备变色的功能。点击方块时，若方块是橙色，则变成蓝色；若为蓝色，则变成橙色；判断方块的颜色，通过li的自定义属性data-usta。将代码封装成函数，便于调用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function oneLryb(obj)&#123;</div><div class="line">    if(obj.getAttribute(&apos;data-usta&apos;) == 0)&#123;</div><div class="line">        obj.style.background = &quot;#5283a3&quot;;</div><div class="line">        obj.setAttribute(&quot;data-usta&quot;,1);</div><div class="line">    &#125;else if(obj.getAttribute(&apos;data-usta&apos;) == 1)&#123;</div><div class="line">        obj.style.background = &quot;#ea971f&quot;;</div><div class="line">        obj.setAttribute(&quot;data-usta&quot;,0);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>点击方块时，改变方块本身，方块相邻的上、下、左、右的颜色。若被点击方块序号为 i ，则上下左右的序号分别为：i-num;i+num;i-1;i+1;同时需要考虑这些方块的上下左右是否都存在方块，即上下左右的序号是否超出了num*num或者小于0；j=0,改变本身；j=1,改变左侧；j=2,改变右侧；j=3，改变上方；j=4,改变下方；符合条件时，调用oneLryb(obj)函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">function allLryb(i,Oli,num)&#123;</div><div class="line">    var k = i;</div><div class="line">    for(let j=0;j&lt;5;j++)&#123;</div><div class="line">        switch(j)&#123;</div><div class="line">            case 0: i = k;oneLryb(Oli[i]);break;</div><div class="line">            case 1:&#123;</div><div class="line">                if(i%num-1&gt;=0)&#123;</div><div class="line">                    i = i-1;</div><div class="line">                    oneLryb(Oli[i]);</div><div class="line">                    i=k;</div><div class="line">                &#125;else&#123;</div><div class="line">                    i=k;</div><div class="line">                &#125;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">            case 2:</div><div class="line">                if((i%num+1)&lt;num)&#123;</div><div class="line">                    i = i+1;</div><div class="line">                    oneLryb(Oli[i]);</div><div class="line">                    i=k;</div><div class="line">                &#125;</div><div class="line">                break;</div><div class="line">            case 3:</div><div class="line">                if(i-num &gt;=0)&#123;</div><div class="line">                    i = i-num;</div><div class="line">                    oneLryb(Oli[i]);</div><div class="line">                    i=k;</div><div class="line">                &#125;</div><div class="line">                break;</div><div class="line">            case 4:</div><div class="line">                if(num*num &gt;i+num)&#123;</div><div class="line">                    i = i+num;</div><div class="line">                    oneLryb(Oli[i]);</div><div class="line">                    i=k;</div><div class="line">                &#125;</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>为方块加上点击的功能，点击一次，步数加一<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function run(Oli,i,num)&#123;</div><div class="line">    var obj = Oli[i];</div><div class="line">    obj.onclick= function()&#123;</div><div class="line">        step ++;</div><div class="line">        Ostep.innerHTML = &quot;步数：&quot;+step;</div><div class="line">        allLryb(i,Oli,num);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在初始化时，为每个li绑定点击功能。将changeBox(num,Oli)函数的for循环改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">......</div><div class="line">    Oli[i].style.background = &quot;#ea971f&quot;;</div><div class="line">    run(Oli,i,num);</div></pre></td></tr></table></figure></p>
+<p>最后我们需要对所有方块进行检查，当所有方块都变成蓝色时，通关。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function exam(obj,num)&#123;</div><div class="line">    for(let i=0;i&lt;num*num;i++)&#123;</div><div class="line">        if(obj[i].getAttribute(&apos;data-usta&apos;) !=1)&#123;</div><div class="line">            return false;</div><div class="line">        &#125;else if(obj[i].getAttribute(&apos;data-usta&apos;) ==1 &amp;&amp;i+1==num*num)&#123;</div><div class="line">            return true;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>每次点击方块之后都应该进行一次检查，若通关，则进入下一关。所以在run(Oli,i,num)方法中调用exam(obj,num)；使用setTimeout进行延时，否则方块改变颜色的效果还没有呈现就进行下一关。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function run(Oli,i,num)&#123;</div><div class="line">    var obj = Oli[i];</div><div class="line">    obj.onclick= function()&#123;</div><div class="line">        step ++;</div><div class="line">        Ostep.innerHTML = &quot;步数：&quot;+step;</div><div class="line">        allLryb(i,Oli,num);</div><div class="line">        flag = exam(Oli,num);</div><div class="line">        if(flag)&#123;</div><div class="line">            num = num +1;</div><div class="line">            Olevel.innerHTML = `关卡：$&#123;num&#125;`; //改变关卡值</div><div class="line">            setTimeout(function()&#123;changeBox(num,Oli);&#125;,300);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###为按钮添加功能，获取元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let ObackAll = document.getElementById(&apos;backAll&apos;); //重玩游戏</div><div class="line">let ObackThis = document.getElementById(&apos;backThis&apos;);//重玩本关</div><div class="line">let Ohelp = document.getElementById(&apos;help&apos;);//辅助方块，暂时还用不上</div><div class="line">let Ostatus = document.getElementById(&apos;status&apos;);//游戏说明</div></pre></td></tr></table></figure></p>
+<p>“重玩游戏”按钮点击效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ObackAll.onclick = function()&#123;</div><div class="line">    for(let j=ObChild.length-1;j&gt;0;j--)&#123;</div><div class="line">        ObChild[j].remove();</div><div class="line">    &#125;</div><div class="line">    step = 0;</div><div class="line">    Ostep.innerHTML = &quot;步数：&quot;+step;</div><div class="line">    num = 1;</div><div class="line">    Olevel.innerHTML = `关卡：$&#123;num&#125;`;</div><div class="line">    changeBox(num,Oli);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>“重玩本关”按钮点击效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ObackThis.onclick = function()&#123;</div><div class="line">    let len = Math.sqrt(ObChild.length);</div><div class="line">    for(let j=ObChild.length-1;j&gt;0;j--)&#123;</div><div class="line">        ObChild[j].remove();</div><div class="line">    &#125;</div><div class="line">    changeBox(len,Oli);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>“游戏说明”按钮点击效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Ostatus.onmouseenter = function()&#123;</div><div class="line">    alert(`游戏说明\n点击方块,改变方块本身及相邻的方块\n所有方块颜色变成蓝色,即通关`)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>完整代码移步：</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://raw.githubusercontent.com/rexana3/picture/master/%E6%89%93%E8%B5%8F/wechat.png" alt="Rexana WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://raw.githubusercontent.com/rexana3/picture/master/%E6%89%93%E8%B5%8F/alipay.png" alt="Rexana Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/20/机器学习之线性回归/" rel="next" title="机器学习之线性回归">
+                <i class="fa fa-chevron-left"></i> 机器学习之线性回归
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/qiao.jpg"
+               alt="Rexana" />
+          <p class="site-author-name" itemprop="name">Rexana</p>
+           
+              <p class="site-description motion-element" itemprop="description">这里的干货有点水</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rexana</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
