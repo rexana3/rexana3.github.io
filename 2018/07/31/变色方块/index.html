@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/07/31/变色方块/index.html">
 <meta property="og:site_name" content="Rexana">
 <meta property="og:description" content="点击方块，改变方块本身及相邻方块颜色，所有方块颜色改变即过关。">
-<meta property="og:updated_time" content="2018-07-31T08:15:48.164Z">
+<meta property="og:updated_time" content="2018-08-02T02:54:50.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="变色方块">
 <meta name="twitter:description" content="点击方块，改变方块本身及相邻方块颜色，所有方块颜色改变即过关。">
@@ -344,7 +344,7 @@
 <p>“重玩游戏”按钮点击效果：步数归零，关卡回到第一关，重新初始化方格。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ObackAll.onclick = function()&#123;</div><div class="line">    for(let j=ObChild.length-1;j&gt;0;j--)&#123;</div><div class="line">        ObChild[j].remove();</div><div class="line">    &#125;</div><div class="line">    step = 0;</div><div class="line">    Ostep.innerHTML = &quot;步数：&quot;+step;</div><div class="line">    num = 1;</div><div class="line">    Olevel.innerHTML = `关卡：$&#123;num&#125;`;</div><div class="line">    changeBox(num,Oli);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>“重玩本关”按钮点击效果：将所有方块变成橙色<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ObackThis.onclick = function()&#123;</div><div class="line">    let len = Math.sqrt(ObChild.length);</div><div class="line">    for(let j=ObChild.length-1;j&gt;0;j--)&#123;</div><div class="line">        ObChild[j].remove();</div><div class="line">    &#125;</div><div class="line">    changeBox(len,Oli);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>“游戏说明”按钮点击效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Ostatus.onmouseenter = function()&#123;</div><div class="line">    alert(`游戏说明\n点击方块,改变方块本身及相邻的方块\n所有方块颜色变成蓝色,即通关`)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>完整代码移步：</p>
+<p>完整代码移步：<a href="https://github.com/rexana3/changeBox/blob/master/index.html" target="_blank" rel="external">https://github.com/rexana3/changeBox/blob/master/index.html</a></p>
 
       
     </div>
