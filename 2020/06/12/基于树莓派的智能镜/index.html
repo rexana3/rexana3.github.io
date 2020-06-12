@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2020/06/12/基于树莓派的智能镜/index.html">
 <meta property="og:site_name" content="Rexana">
 <meta property="og:description" content="基树莓派设计一个既能照镜又能显示图片文字，同时可以通过语音控制室内设备的状态的智能镜。">
-<meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/1.png">
+<meta property="og:image" content="https://github.com/rexana3/picture/blob/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/1.png?raw=true">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/3.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/4.png">
@@ -103,11 +103,11 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/8.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/9.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/10.png">
-<meta property="og:updated_time" content="2020-06-12T08:20:13.113Z">
+<meta property="og:updated_time" content="2020-06-12T08:23:49.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于树莓派的智能镜">
 <meta name="twitter:description" content="基树莓派设计一个既能照镜又能显示图片文字，同时可以通过语音控制室内设备的状态的智能镜。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/1.png">
+<meta name="twitter:image" content="https://github.com/rexana3/picture/blob/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/1.png?raw=true">
 
 
 
@@ -338,7 +338,7 @@
       
         <pre><code>本文将详细介绍智能镜的设计过程，包括软件的编写、硬件的购买和设计。
 </code></pre><p>#镜面显示部分</p>
-<p>##镜面材料及显示效果<br>欲完成即能照镜又能显示图片文字的效果，需要用到的材料有：LCD屏幕、原子镜、数据线、充电头、HDMI线。本设计中用到的是7寸的LCD屏幕和10寸的原子镜、13cm<em>18cm的原子镜。根据最后的呈现效果，选用了10寸的原子镜。LCD屏幕使用HDMI线与树莓派连接，同时需要数据线和充电头进行供电。必须直接接电源，而不是用电脑等其他设备供电，否则有可能会导致供电不足，LCD不能正常显示。<br>所用的材料如下图所示：<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/1.png" alt="原子镜" title="原子镜"><br><img src="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/2.png" alt="LCD屏幕" title="LCD屏幕"><br>13cm</em>18cm原子镜+7寸LCD屏幕显示效果如下图：<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/3.png" alt="13cm*18cm原子镜+7寸LCD" title="13cm*18cm原子镜+7寸LCD"><br>10寸原子镜+7寸LCD屏幕显示效果如下图：<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/4.png" alt="10寸原子镜+7寸LCD" title="110寸原子镜+7寸LCD"><br>显然，10+7的呈现效果更佳，人像照得更为清晰。由于LCD屏幕的亮度较低，且原子镜的折射率也不是非常好，导致在白天很难看清屏幕上的字和图片；本设计在夜晚使用效果较好。</p>
+<p>##镜面材料及显示效果<br>欲完成即能照镜又能显示图片文字的效果，需要用到的材料有：LCD屏幕、原子镜、数据线、充电头、HDMI线。本设计中用到的是7寸的LCD屏幕和10寸的原子镜、13cm<em>18cm的原子镜。根据最后的呈现效果，选用了10寸的原子镜。LCD屏幕使用HDMI线与树莓派连接，同时需要数据线和充电头进行供电。必须直接接电源，而不是用电脑等其他设备供电，否则有可能会导致供电不足，LCD不能正常显示。<br>所用的材料如下图所示：<br><img src="https://github.com/rexana3/picture/blob/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/1.png?raw=true" alt="原子镜" title="原子镜"><br><img src="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/2.png" alt="LCD屏幕" title="LCD屏幕"><br>13cm</em>18cm原子镜+7寸LCD屏幕显示效果如下图：<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/3.png" alt="13cm*18cm原子镜+7寸LCD" title="13cm*18cm原子镜+7寸LCD"><br>10寸原子镜+7寸LCD屏幕显示效果如下图：<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/4.png" alt="10寸原子镜+7寸LCD" title="110寸原子镜+7寸LCD"><br>显然，10+7的呈现效果更佳，人像照得更为清晰。由于LCD屏幕的亮度较低，且原子镜的折射率也不是非常好，导致在白天很难看清屏幕上的字和图片；本设计在夜晚使用效果较好。</p>
 <p>##网页部分</p>
 <p>###页面样式<br>镜面上呈现的文字、图片信息是使用了网页技术。网页的样式如下图所示：<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/5.png" alt="页面样式" title="页面样式"><br>基本都是常规的CSS设置。在CSS的设计中，为了实现自适应屏幕的尺寸，对元素块的设置均使用了百分比的形式。</p>
 <p>###内容填充<br>页面呈现的内容包括：天气预报、新闻热搜、每日一句、日期、时间、城市。其中，日期和时间使用jquery自带的函数即可获取当前时刻的信息，这部分的内容封装在main.js的gettoday()和gettime()函数中。而其余的信息需要通过接口获取。本设计选用的接口是<a href="https://www.tianapi.com/" title="天行数据" target="_blank" rel="external">https://www.tianapi.com/</a>中的<a href="https://www.tianapi.com/apiview/72" title="天气预报" target="_blank" rel="external">https://www.tianapi.com/apiview/72</a>、<a href="https://www.tianapi.com/apiview/100" title="微博热搜榜" target="_blank" rel="external">https://www.tianapi.com/apiview/100</a>、<a href="https://www.tianapi.com/apiview/129" title="ONE一个" target="_blank" rel="external">https://www.tianapi.com/apiview/129</a>、<a href="https://www.tianapi.com/apiview/43" title="ip地址查询" target="_blank" rel="external">https://www.tianapi.com/apiview/43</a>。<br>这些接口的调用本设计是使用jquery的get方法，获取接口信息，进而进行内容的填充。<br>注意：使用本设计的代码时，需要将项目中的magicmirror2/js/main.js中天行数据的密钥改成自己的密钥。<br><img src="https://raw.githubusercontent.com/rexana3/picture/master/%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E6%99%BA%E8%83%BD%E9%95%9C/6.png" alt="密钥修改" title="密钥修改"></p>
